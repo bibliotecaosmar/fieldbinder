@@ -1,7 +1,7 @@
 //rediretion
-/* <?php 
-    include '..app/middleware/filterlogin.php'
-?> */
+<?php 
+    //include '..app/middleware/filterlogin.php'
+?>
 <!DOCTYPE html>
     <html>
         <head>
