@@ -1,4 +1,5 @@
-<?php include '..resource/view/essential/header.php' ?>
-<?php include '..storage/login.php' ?>
-<?php include '..resource/view/content/plant.php' ?>
-<?php include '..resorce/view/essential/footer.php' ?>
+<?php 
+    include '../resource/views/essential/header.php';
+    include '../storage/login.php';
+    include '../resource/views/content/plant.php';
+    include '../resource/views/essential/footer.php';
