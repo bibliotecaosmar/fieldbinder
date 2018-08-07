@@ -1,6 +1,6 @@
         </body>
-
+        <!--Footer-->
         <footer>
-            <!--Adtives informations about the software-->
+            <!--adtives informations about the software-->
         </footer>
     </html>
