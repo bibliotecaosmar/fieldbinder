@@ -1,5 +1,3 @@
-<?php 
+<?php
+    namespace routes;
     //routes
-    class route{
-        $url;
-    }

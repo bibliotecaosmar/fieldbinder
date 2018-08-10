@@ -1,4 +1,5 @@
 <?php
+    namespace IncludeData;
     ////////////////////////////////////
     ///Include of Datas from Spiecies///
     ////////////////////////////////////
@@ -16,15 +17,15 @@
             $minid;
         }
 
-        private function createData(){
+        function _contruct(){}
+        private function createData(){}
+        private function createPic(){}
+    }
 
-        }
-
-        private function createPic(){
-            
-        }
+    class ValidateData extends IncludeData{
+        $validatyData = {};
         
-        private function sendDataIncluded(){
-            
+        private datavalidation(){
+
         }
     }

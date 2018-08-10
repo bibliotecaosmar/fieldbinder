@@ -12,8 +12,8 @@
 
         }
 
-        private function validateAccount(){
-            
+        private function validateAccount($user, $password){
+            this
         }
 
         private function showAccounts(){

@@ -1,35 +1,37 @@
 <?php
+    namespace User;
     ////////////////////
     ///Datas of Users///
     ////////////////////
     
     class User{
-        public $nickname;
+        protected $nickname;
         protected $email;
         protected $age;
 
-        protected function includeData(){
-            
+        private function __contruct($nickname,$email,$age){
+            $this->nickname = $nickname;
+            $this->email = $email;
+            $this->age = $age;
         }
+
+        protected function 
     }
     
     //adult users
     class Adult extends User{
-        protected function filterPictures(){
-
-        }
+        
     }
     
     //adm
     final class Adm extends Adult{
         private $name;
 
-        private function editUser(){
-
+        private function __construct(){
+            $this->name = $name;
         }
-
         private function envyReport(){
-
+            sendEmail(self::$email);
         }
     }
 
