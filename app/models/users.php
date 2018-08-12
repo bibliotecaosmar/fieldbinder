@@ -3,7 +3,6 @@
     ////////////////////
     ///Datas of Users///
     ////////////////////
-    
     class User{
         protected $nickname;
         protected $email;
@@ -17,30 +16,32 @@
 
         protected function 
     }
-    
-    //adult users
+    /////////////////
+    ///Adult Users///
+    /////////////////
     class Adult extends User{
         
     }
-    
-    //adm
+    /////////
+    ///Adm///
+    /////////
     final class Adm extends Adult{
         private $name;
 
         private function __construct(){
             $this->name = $name;
         }
+        //send email
         private function envyReport(){
             sendEmail(self::$email);
         }
     }
-
-    //volunty profissionals 
+    ///////////////////////////
+    ///Volunty Profissionals///
+    ///////////////////////////
     final class Expert extends Adult{
         private $name;
         private $diploma;
         
-        private fastInclude(){
-
         }
     }

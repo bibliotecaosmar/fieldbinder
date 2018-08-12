@@ -1,9 +1,14 @@
 <?php
     namespace Session;
     //Session
-    class Session{
+    class Session extends Controller{
         private $user;
         private $nickname;
+
+        function __construct($user, $nickname){
+            $this->user = $user;
+            $this->nickname = $nickname;
+        }
 
         private function startSession(){
             start_session();

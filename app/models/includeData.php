@@ -17,7 +17,10 @@
             $minid;
         }
 
-        function _contruct(){}
+        function _contruct($data, $pic){
+            $this->data = $date;
+            $this->pic = $date;
+        }
         private function createData(){}
         private function createPic(){}
     }
@@ -25,7 +28,11 @@
     class ValidateData extends IncludeData{
         $validatyData = {};
         
-        private datavalidation(){
+        function __construct($validatyData){
+            $this->validatyData = $validatyData;
+        }
+        
+        private datavalidation($validatyData){
 
         }
     }

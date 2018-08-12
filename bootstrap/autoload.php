@@ -1,9 +1,12 @@
 <?php
-    /*define ( 'WWW_ROOT' , dirname(__FILE__) );
-    define ( 'DS' , DIRECTORY_SEPARATOR );*/
-
-    function __autoload($class){
-        if(file_exists($class.'php')){
-            require_once $class.'php'
+    //////////////
+    ///Autoload///
+    //////////////
+    function __autoload($class) {
+        $class = WWW_ROOT . DS . str_replace('\\', DS, $class) . 'php';
+        if (file_exists($class . '.php')) {
+            require($class . '.php');
+        } else {
+            throw new Exception('Unable to load class named $class');
         }
     }

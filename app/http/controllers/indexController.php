@@ -1,9 +1,18 @@
 <?php
     namespace Index;
-    //Controller of the index
+    /////////////////////////////
+    ///Controller of the index///
+    /////////////////////////////
     class Index extends Controller{
-        define($body, '../resource/view/content/insect.php')
-        function __contruct(){
-            if
+        //checkout session
+        function __construct()
+        function loadIndex(){
+            //load static page home or aplication default page
+            if(isset($_SESSION['user'])){
+                
+            }else{
+
+            }
         }
+        
     }
