@@ -24,15 +24,3 @@
         private function createData(){}
         private function createPic(){}
     }
-
-    class ValidateData extends IncludeData{
-        $validatyData = {};
-        
-        function __construct($validatyData){
-            $this->validatyData = $validatyData;
-        }
-        
-        private datavalidation($validatyData){
-
-        }
-    }

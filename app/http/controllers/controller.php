@@ -12,7 +12,7 @@
 
         private function loadPage($page){
             //load page requested
-            $page = 
+            if() 
         }
     }
  
