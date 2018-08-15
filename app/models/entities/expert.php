@@ -1,11 +1,12 @@
 <?php
     namespace Expert;
-    ///////////////////////////
-    ///Volunty Profissionals///
-    ///////////////////////////
+    #============================#
+    # ==Vonlunty Profissionals== #
+    #============================#
     final class Expert extends Adult{
-        private $name;
         private $diploma;
         
+        function fastInclude(){
+            
         }
     }

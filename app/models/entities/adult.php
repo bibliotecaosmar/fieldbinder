@@ -1,10 +1,10 @@
 <?php
     namespace Adult;
-    /////////////////
-    ///Adult Users///
-    /////////////////
+    #=================#
+    # ==Adult Users== #
+    #=================#
     class Adult extends User{
-        private reviewPics(){
-            
+        revisePictures(){
+            //    
         }
     }

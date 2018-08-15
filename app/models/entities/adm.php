@@ -1,16 +1,13 @@
 <?php
     namespace Adm;
-    /////////
-    ///Adm///
-    /////////
+    #===========#
+    #  ==Adm==  #
+    #===========#
     final class Adm extends Adult{
-        private $name;
+        private function editAccounts(){
 
-        private function __construct(){
-            $this->name = $name;
         }
-        //send email
-        private function envyReport(){
-            sendEmail(self::$email);
+        private function editSpiece(){
+
         }
     }

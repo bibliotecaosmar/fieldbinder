@@ -1,18 +1,14 @@
 <?php
     namespace Controller;
-    ////////////////
-    ///Controller///
-    ////////////////
-    class Controller{
-        $page;
+    #================#
+    # ==Controller== #
+    #================#
+    class Controller implements ShowSpiece{
+        private $page;
 
         function __construct($page){
             $this->page = $page;
         }
 
-        private function loadPage($page){
-            //load page requested
-            if() 
-        }
     }
  

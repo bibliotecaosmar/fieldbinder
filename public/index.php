@@ -7,4 +7,4 @@
 
     require_once (WWW_ROOT.DS.'autoload.php');
 
-    $loadpage = new Routes();
+    $loadpage = new Routes($_SERVER['REQUEST_URI']);
