@@ -1,9 +1,11 @@
 <?php
-    namespace Exception;
+    namespace app\exception;
     #================#
     # ==Exceptions== #
     #================#
-    class Exception{
+    
+    class Exception
+    {
         private $exception;
 
         function __construct($exception){

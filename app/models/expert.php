@@ -1,9 +1,11 @@
 <?php
-    namespace Expert;
+    namespace app\model;
     #============================#
     # ==Vonlunty Profissionals== #
     #============================#
-    final class Expert extends Adult{
+    
+    final class Expert extends Adult
+    {
         private $diploma;
         
         function fastInclude(){

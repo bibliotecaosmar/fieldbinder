@@ -1,11 +1,11 @@
 <?php
-    namespace ShowSpiece;
+    namespace app\model;
     #====================================#
     # ==Show Datas of the Spiece Class== #
     #====================================#
-    interface ShowSpiece{
-        //Datas in Context
-        function showSpiece(){
-
-        }
+    
+    interface ShowSpiece
+    {
+        //Datas from Page
+        public function showSpiece($spiece);
     }

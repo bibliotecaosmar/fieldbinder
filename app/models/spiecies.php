@@ -1,10 +1,13 @@
 <?php
-    namespace Spieces;
+    namespace app\model;
     #=============#
     # ==Spieces== #
     #=============#
-    class Spieces{
+    
+    class Spieces implements ShowData
+    {
         private $spiece = {
+            $id;
             $kingdom;
             $habitat;
             $spiecePicture;
@@ -13,9 +16,14 @@
             $idMin;
         }
 
-        function getSpiece($spiece){
-            return $spiece
+        function showData(){
+            return 
         }
+
+        function getSpiece($spiece){
+            $spiece->showSpiece();
+        }
+        
         function updateSpiece($spiece){
             
         }

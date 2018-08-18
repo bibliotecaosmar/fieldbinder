@@ -1,9 +1,11 @@
 <?php
-    namespace IncludeData;
+    namespace app\model;
     #====================================#
     # ==Include of Datas from Spiecies== #
     #====================================#
-    class IncludeData{
+    
+    class IncludeData
+    {
         private $data = {
             $spiecie;
             $kingdom;
@@ -15,16 +17,20 @@
             $data;
             $hour;
         };
+
         function _contruct($data){
             $this->data = $date;
+            registerData();
+            vallidateData();
         }
-        private function validateData(){
 
+        private function validateData(ShowData $datatype){
+            $datatype=>showData();
         }
-        function setData(){
 
-        }
-        public function getData(){
+        public function registerData($datatype){
             
         }
+
+
     }

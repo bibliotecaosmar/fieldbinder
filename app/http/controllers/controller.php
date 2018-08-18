@@ -1,14 +1,22 @@
 <?php
-    namespace Controller;
+    namespace app\http\controller;
     #================#
     # ==Controller== #
     #================#
-    class Controller implements ShowSpiece{
-        private $page;
-
-        function __construct($page){
-            $this->page = $page;
+    
+    class Controller
+    {
+        $action = $_POST['action'];
+        $view = $_POST['view'];
+        $model;
+        
+        function __construct(){
+            RegisterLogs::registerLog();
+            ValidateRequest::validateRequest();
+            $model = ShowSpiece::showSpiece($view);
+            ShowData::showData();
+            ExecuteAction::executeAction($action);
+            BuildView::buildPage($view , $model);
         }
-
     }
  

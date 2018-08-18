@@ -1,12 +1,15 @@
 <?php
-    namespace Adm;
+    namespace app\model;
     #===========#
     #  ==Adm==  #
     #===========#
-    final class Adm extends Adult{
+    
+    final class Adm extends Adult
+    {
         private function editAccounts(){
 
         }
+        
         private function editSpiece(){
 
         }

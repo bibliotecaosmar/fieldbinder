@@ -1,10 +1,12 @@
 <?php
     <?php
-    namespace User;
+    namespace app\model;
     #===================#
     # ==Data of Users== #
     #===================#
-    class User{
+    
+    class User
+    {
         protected $nickname;
         protected $email;
         protected $age;
@@ -14,6 +16,8 @@
             $this->email = $email;
             $this->age = $age;
         }
+
         function submitData(){}
+        
         function reviseData(){}
     }
