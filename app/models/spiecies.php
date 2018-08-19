@@ -4,27 +4,32 @@
     # ==Spieces== #
     #=============#
     
-    class Spieces implements ShowData
+    class Spieces
     {
+        private $lastInsertion;
         private $spiece = {
-            $id;
+            $scientificName;
+            $commonName;
             $kingdom;
             $habitat;
             $spiecePicture;
-            $commonName;
             $idPic;
             $idMin;
         }
 
-        function showData(){
-            return 
+        function __construct($spiece){
+            $this->spiece = $spiece;
+            updateSpiece();
         }
 
-        function getSpiece($spiece){
-            $spiece->showSpiece();
+        public function getSpiece($spiece){
+            $spiece = /*database*/;
+            return $spiece;
         }
         
-        function updateSpiece($spiece){
-            
+        private function updateSpiece($spiece){
+            #1.search spiece number
+            #2.if exist, update
+            #3.else, create new position
         }
     }

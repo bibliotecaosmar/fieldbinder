@@ -4,7 +4,7 @@
     # ==Include of Datas from Spiecies== #
     #====================================#
     
-    class IncludeData
+    class IncludeData implements ShowData
     {
         private $data = {
             $spiecie;
@@ -21,15 +21,18 @@
         function _contruct($data){
             $this->data = $date;
             registerData();
-            vallidateData();
         }
 
-        private function validateData(ShowData $datatype){
-            $datatype=>showData();
+        public function showData($usertype){
+            //show data depending of usertype
+        }
+
+        public function validadeData($datatype){
+            //transform data input in data validation e data inclusion depending of the *Business Rule
         }
 
         public function registerData($datatype){
-            
+            //register all and any data sent for user            
         }
 
 

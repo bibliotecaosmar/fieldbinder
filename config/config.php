@@ -9,4 +9,3 @@
     define('FOOT' , 'view' . DS . 'essential' . DS . 'foot.php');
     define('HEAD' , 'view' . DS . 'essential' . DS . 'head.php');
     
-    

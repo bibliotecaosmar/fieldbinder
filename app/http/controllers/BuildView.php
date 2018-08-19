@@ -1,5 +1,5 @@
 <?php
-    namespace app\http\controller;
+    namespace app\http\controllers;
 
     interface BuildView
     {

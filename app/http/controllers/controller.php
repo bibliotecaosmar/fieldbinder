@@ -1,5 +1,5 @@
 <?php
-    namespace app\http\controller;
+    namespace app\http\controllers;
     #================#
     # ==Controller== #
     #================#
@@ -18,6 +18,6 @@
             ExecuteAction::executeAction($action);
             BuildView::buildPage($view , $model);
         }
-        
+
     }
  

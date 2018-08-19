@@ -6,9 +6,9 @@
     
     interface ShowData
     {
-        //Data validated
-        public function showValidatedData($datatype);
-
         //Data from validate
-        public function showData($datatype);
+        public function showData($usertype);
+        
+        //Data validated
+        public function ValidateData($datatype);
     }

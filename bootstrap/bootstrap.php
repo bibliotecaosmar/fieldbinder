@@ -11,9 +11,11 @@
         require_once $class;
     }
 
-    spl_autoload_register(load());
+    spl_autoload_register(load($class));
 
-    new Controller();
+    use app/http/controllers/;
+
+    new Controller;
     
 
     
