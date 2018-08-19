@@ -104,5 +104,4 @@ venv.bak/
 .mypy_cache/
 
 # DIR's
-__config__/
-__log__/
+config/
