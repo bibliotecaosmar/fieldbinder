@@ -3,5 +3,5 @@
 
     interface BuildView
     {
-        public function buildPage($view , $model);
+        public function buildView($view , $model = NULL);
     }

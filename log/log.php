@@ -3,10 +3,8 @@
     #==========#
     # ==Logs== #
     #==========#
-
-    interface Log{
-        //
-        function registerLogs($log){
-            //
-        }
+    interface Log
+    {
+        const $log = array();
+        public function registerLog($log);
     }

@@ -1,6 +1,6 @@
 <?php
     <?php
-    namespace app\model;
+    namespace \app\model;
     #===================#
     # ==Data of Users== #
     #===================#

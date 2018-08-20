@@ -6,7 +6,8 @@
     
     class LoadPage implements BuildView
     {
-        buildView($view , $model){
+        
+        buildView(BuildView::$view , BuildView::$model){
             
         }
     }

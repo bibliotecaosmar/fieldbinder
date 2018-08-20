@@ -2,20 +2,13 @@
     #===============#
     # ==Bootstrap== #
     #===============#
-
     require_once '../config/config.php';
-    
-    function load($class){
-        $class = explode("\\" , $class);
-        $class = ROOT.DS.implode(DS , $class);
+
+    function loader($class){
+        $class = ROOT . DS . str_replace('\\' , DS , $class) . '.php';
         require_once $class;
     }
-
-    spl_autoload_register(load($class));
-
-    use app/http/controllers/;
-
-    new Controller;
     
+    spl_autoload_register('loader');
 
-    
+    new app\http\controllers\Controller();
