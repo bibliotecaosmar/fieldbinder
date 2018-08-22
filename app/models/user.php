@@ -9,12 +9,12 @@
     {
         protected $nickname;
         protected $email;
-        protected $age;
+        protected $born;
 
-        function __contruct($nickname,$email,$age){
+        function __contruct($nickname , $email , $born){
             $this->nickname = $nickname;
             $this->email = $email;
-            $this->age = $age;
+            $this->born = $born;
         }
 
         function submitData(){}

@@ -15,11 +15,14 @@
         //error messages
         setErroMessage($exception){
             switch($exception){
+                case 01:
+                    return ['warning'] , ['01'];
+                    break;
                 case 404:
-                    echo 'Error 404: server not found';
+                    return ['error'] , ['404'];
                     break;
                 default :
-                    echo 'Error not know';
+                    return 'Error not know';
                     break;
             }
         }

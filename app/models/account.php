@@ -6,13 +6,19 @@
     
     class Account
     {
+        private $conn = new PDO("mysql:host=localhost;dbname=account" , "root" , "");
         private $user;
         private $password;
-        private $userType;
 
-        function registeAccount($email, $password, $nickname, $age, $completeName, $diploma,){}
+        function registeAccount($email , $password , $nickname , $born , $completeName , $diploma){}
         
-        function validateAccount($user, $password){}
+        function validateAccount($user, $password){
+            try{
+                return $pdo->prepare("SELECT * FROM user WHERE ")
+            }catch{
+                new app\exceptions\Exceptions(001);
+            }
+        }
         
         function showAccounts($user, $password){}
         

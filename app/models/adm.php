@@ -6,11 +6,12 @@
     
     final class Adm extends Adult
     {
-        private function editAccounts(){
+        public function editAccounts(){
 
         }
         
-        private function editSpiece(){
+        public function editSpiece(){
 
         }
+
     }

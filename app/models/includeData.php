@@ -16,6 +16,7 @@
             $author;
             $data;
             $hour;
+            $status;
         };
 
         function _contruct($data){
