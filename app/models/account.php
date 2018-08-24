@@ -14,7 +14,8 @@
         
         function validateAccount($user, $password){
             try{
-                return $pdo->prepare("SELECT * FROM user WHERE ")
+                if(($user != $pdo->prepare("SELECT * FROM user WHERE user: $user"))||
+
             }catch{
                 new app\exceptions\Exceptions(001);
             }

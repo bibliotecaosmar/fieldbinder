@@ -4,24 +4,26 @@
     # ==Home Controller== #
     #=====================#
 
-    class IndexController extends Controller
+    class IndexController extends SignController 
     {
-        $user;
+        protected $user;
+        protected $view;
 
         public function __contruct(){
             $this->user = ControllerBehavior::getLogged();
+            $this->view = loadIndex();
             $this->user = checkUser();
-            $this->loadHome();
+            $this->loadIndexPage();
         }
         //Alt between logged and signin/signup buttons
-        private function checkUser($user){
+        protected function checkUser($user){
             return ($user = 'undefined') ? (require (__DIR__ . SIGN_BUTTON)) : $user;
         }
-        //load full page
-        private function loadHome($user){
-            $head = require_once HEAD;
-            $view = require_once (__DIR__ . HTTP . ROOT . VIEW . INDEX);
-            $foot = require_once FOOT
+        //load specifically index page
+        private function loadIndexPage($user , $view){
+            $head = require_once (__DIR__ . ROOT . HEAD);
+            $view = require_once (__DIR__ . ROOT . VIEW . INDEX)
+            $foot = require_once (__DIR__ . ROOT . FOOT);
             echo $head.$user.$view.$foot;
         }
     }

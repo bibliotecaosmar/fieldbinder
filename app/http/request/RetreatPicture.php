@@ -4,6 +4,5 @@
 
     interface RetreatPicture
     {
-        const $pic = /*pic uploaded */
         retreatPicture($pic);
     }

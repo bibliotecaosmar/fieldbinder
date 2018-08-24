@@ -15,7 +15,7 @@
             }
         }
         //Retreat pictures for upload
-        public function retreatPic(RetreatPicture $pic){
+        public function retreatPic(){
 
         }
         
