@@ -13,6 +13,7 @@
             return $this->setErroMessage();
         }
         //error messages
+        /*This message will be used in many application levels for avoid error explaination*/
         private function setErroMessage($exception){
             switch($exception){
                 case 01:

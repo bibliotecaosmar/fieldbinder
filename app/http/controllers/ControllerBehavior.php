@@ -4,12 +4,15 @@
     # ==Get User of the Controller== #
     #================================#
 
+    //Interface used for all concrect controllers
     interface ControllerBehavior
     {
+        //login for validation
         $login = {
             $user;
             $password;
         };
+        //register form for validation
         $registerForm = {
             $email;
             $password;

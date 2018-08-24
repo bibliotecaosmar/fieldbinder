@@ -6,7 +6,7 @@
     
     class Account
     {
-        private $conn = new PDO("mysql:host=localhost;dbname=account" , "root" , "");
+        private $conn = new PDO("mysql:host=localhost;dbname=account" , "root" , ""); //database connection
         private $user;
         private $password;
 

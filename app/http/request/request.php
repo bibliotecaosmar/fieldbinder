@@ -14,11 +14,11 @@
                 //all request list
             }
         }
-
+        //Retreat pictures for upload
         public function retreatPic(RetreatPicture $pic){
 
         }
-
+        
         public function forwardDataInput(){
 
         }
