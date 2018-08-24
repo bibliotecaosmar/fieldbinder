@@ -21,9 +21,11 @@
             $name;
             $diploma;
         };
-
+        
         public function getLogged();
-        public function getAction();
+        public function checkUser($user);
+        public function executeAction($action);
+        public function loadPage($view , $user , $model)
         public function getLogin($login)
         public function getRegisterForm($form);
     }

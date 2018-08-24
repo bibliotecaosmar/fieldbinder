@@ -11,6 +11,10 @@
         public function getLogged(){
             return (isset($_COOKIE['logged'])) ? ($_COOKIE['logged']) : 'undefined';
         }
+        //Alt between logged and signin/signup buttons
+        public function checkUser(ControllerBehavior $user){
+            return ($user = 'undefined') ? (require (__DIR__ . SIGN_BUTTON)) : $user;
+        }
         //get action if is there
         public function getAction(){
             return (isset($_POST['action'])) ? ($_POST['action']) : 'none';
