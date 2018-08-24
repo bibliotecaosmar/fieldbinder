@@ -1,5 +1,5 @@
 <?php
-    namespace \app\model;
+    namespace app\model;
     #=============#
     # ==Account== #
     #=============#
@@ -10,7 +10,7 @@
         private $user;
         private $password;
 
-        function registeAccount($email , $password , $nickname , $born , $completeName , $diploma){}
+        function registeAccount($email , $password , $nickname , $born , $name , $diploma){}
         
         function validateAccount($user, $password){
             try{

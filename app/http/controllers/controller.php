@@ -4,32 +4,35 @@
     # ==Controller== #
     #================#
     
-    class Controller
+    abstract class Controller implements ControllerBehavior
     {
-        private $user;
-        private $view;
-        private $action;
-        private $model;
-
-        public function __construct($view , $model){
-            $this->user = $this->getUser();
-            $this->view = $view;
-            $this->action = getAction();
-            $this->model = $model;
-            catchModel();
-            buildPage($this->view , $this->model);
+        public function getLogged(){
+            return (isset($_COOKIE['logged'])) ? ($_COOKIE['logged']) : 'undefined';
         }
 
-        private function getUser(){
-            return (isset($_COOKIE['user'])) ? ($_COOKIE['user']) : 'undefined';
+        public function getAction(){
+            return (isset($_POST['action'])) ? ($_POST['action']) : 'none';
         }
 
-        private function getAction(){
-            return (isset($_POST['action'])) ? ($_POST['action']) : '';
+        public function getLogin(ControllerBehavior $login){
+            if(!isset(($_POST['user'])||($_POST['password'])){
+                exit(new app\exceptions\Exception(01));
+            }
+            $login->user = $_POST['user'];
+            $login->password = $_POST['password'];
+            return $login;
         }
 
-        private function catchModel($user , $action){
-
+        public function getRegisterForm(ControllerBehavior $registerForm){
+            if(!isset(($_POST['email'])||$_POST['password']||$_POST['nickname']||$_POST['born'])){
+                exit(new Exception(01));
+            }
+            $registerForm->email = $_POST['email'];
+            $registerForm->password = $_POST['password'];
+            $registerForm->nickname = $_POST['nickname'];
+            $registerForm->born = $_POST['born'];
+            $registerForm->name = (isset($_POST['name'])) ? ($_POST['name']) : 'none';
+            $registerForm->diploma = (isset($_POST['diploma'])) ? ($_POST['diploma']) : 'none';
         }
     }
  

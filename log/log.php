@@ -3,20 +3,17 @@
     #==========#
     # ==Logs== #
     #==========#
-    class Log implements ViewLogs
+    class Log implements LogSystem
     {
-        private $conn = new \PDO("mysql:host=localhost;dbname=log" , "root" , " ");
+        //private $conn = new \PDO("mysql:host=localhost;dbname=log" , "root" , " ");
         private $log = array();
         
-        function __construct(){
-            registerLog();
-        }
-
+        //interface method
         public function viewLog(){
             //resgate all logs in table
         }
-
-        private function registerLog($log){
+        //interface method
+        private function registerLog(RegisteLog $log){
             $data = date('Y-m-d h:i:s');
             array_push($log , "ip : $_SERVER['REMOTE_ADDR']");
             array_push($log , "action : $_POST['action']");
@@ -30,8 +27,8 @@
                 $insertionLog = $conn->prepare("INSERT INTO log VALUE(:log)");
                 $insertionLog->bindValue(":log" , $log);
                 $insertionLog->execute();
-            }catch{
-                new Exception(/*exception flux*/)
+            }catch(Exception $e)){
+                
             }
         }
     }

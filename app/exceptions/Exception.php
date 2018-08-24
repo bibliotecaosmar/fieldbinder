@@ -8,21 +8,27 @@
     {
         private $exception;
 
-        function __construct($exception){
+        public function __construct($exception){
             $this->exception = $exception;
-            setErroMessage();
+            return $this->setErroMessage();
         }
         //error messages
-        setErroMessage($exception){
+        private function setErroMessage($exception){
             switch($exception){
                 case 01:
-                    return ['warning'] , ['01'];
+                    return ['warning' , 'Unfilled Field'];
+                    break;
+                case 02:
+                    return ['warning' , 'Data Not Found'];
+                    break;
+                case 03:
+                    return ['warning' , 'Invalided Field'];
                     break;
                 case 404:
-                    return ['error'] , ['404'];
+                    return ['error' , '404, Server Not Found'];
                     break;
                 default :
-                    return 'Error not know';
+                    return ['error' , 'Unknow Error'];
                     break;
             }
         }

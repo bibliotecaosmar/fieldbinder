@@ -19,7 +19,7 @@
             $status;
         };
 
-        function _contruct($data){
+        public function _contruct($data){
             $this->data = $date;
             registerData();
         }

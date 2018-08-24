@@ -6,7 +6,6 @@
     
     class Spieces
     {
-        private $lastInsertion;
         private $spiece = {
             $scientificName;
             $commonName;

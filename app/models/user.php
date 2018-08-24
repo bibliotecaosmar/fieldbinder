@@ -11,13 +11,13 @@
         protected $email;
         protected $born;
 
-        function __contruct($nickname , $email , $born){
+        public function __contruct($nickname , $email , $born){
             $this->nickname = $nickname;
             $this->email = $email;
             $this->born = $born;
         }
 
-        function submitData(){}
+        public function submitData(){}
         
-        function reviseData(){}
+        public function reviseData(){}
     }

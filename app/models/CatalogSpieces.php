@@ -15,7 +15,7 @@
             $commonName;
         }
 
-        function __construct($kingdom , $page){
+        public function __construct($kingdom , $page){
             $this->kingdom = $kingdom;
             $this->page = $page;
             showCatalog();

@@ -11,7 +11,5 @@
     
     spl_autoload_register('loader');
 
-    new log\Log();
-    $rule = new route\Routes();
-    new app\http\request\Request($rule);
+    new route\Routes;
     new app\http\controllers\Controller();
