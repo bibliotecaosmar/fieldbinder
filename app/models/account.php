@@ -6,7 +6,7 @@
     
     class Account
     {
-        private $conn = new PDO("mysql:host=localhost;dbname=account" , "root" , ""); //database connection
+        private $conn = new \PDO("mysql:host=localhost;dbname=account" , "root" , ""); //database connection
         private $user;
         private $password;
 
@@ -14,10 +14,10 @@
         
         function validateAccount($user, $password){
             try{
-                if(($user != $pdo->prepare("SELECT * FROM user WHERE user: $user"))||
+                $validate = $pdo->prepare("SELECT * FROM user WHERE user: $user")
 
-            }catch{
-                new app\exceptions\Exceptions(001);
+            }catch(\PDOException $e){
+                throw new app\exceptions\Exceptions(001);
             }
         }
         

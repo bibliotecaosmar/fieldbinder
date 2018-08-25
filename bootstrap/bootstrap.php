@@ -12,4 +12,5 @@
     
     spl_autoload_register('loader');
 
+    new app\http\controllers\IndexController;
     new route\Routes;

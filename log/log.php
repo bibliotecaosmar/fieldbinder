@@ -5,12 +5,19 @@
     #==========#
     class Log implements LogSystem
     {
-        //private $conn = new \PDO("mysql:host=localhost;dbname=log" , "root" , " ");
+        private $conn = new \PDO("mysql:host=localhost;dbname=log" , "root" , " ");
         private $log = array();
         
         //interface method
         public function viewLog(){
             //resgate all logs in table
+            $showlog = array();
+            for(int i = 0; i < 30 ; i++){
+                $getlog = $conn->prepare("SELECT INTO log() VALUE (:log)")
+                implode($getlog);
+                array_push($showlog , $getlog);
+            }
+            return $showlog;
         }
         //interface method
         private function registerLog(RegisteLog $log){
@@ -21,14 +28,14 @@
             array_push($log , "user : $_POST['user']");
             array_push($log , "password : $_POST['password']");
             array_push($log , "time : $data");
-
+            $log = implode(',' , $log);
             //regist log in a sql table
             try{
                 $insertionLog = $conn->prepare("INSERT INTO log VALUE(:log)");
                 $insertionLog->bindValue(":log" , $log);
                 $insertionLog->execute();
-            }catch(Exception $e)){
-                
+            }catch(PDOException $e)){
+                continue;
             }
         }
     }
