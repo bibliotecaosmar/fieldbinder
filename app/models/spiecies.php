@@ -1,34 +1,11 @@
 <?php
-    namespace \app\model;
+    namespace app\model;
     #=============#
     # ==Spieces== #
     #=============#
     
     class Spieces
     {
-        private $spiece = {
-            $scientificName;
-            $commonName;
-            $kingdom;
-            $habitat;
-            $spiecePicture;
-            $idPic;
-            $idMin;
-        }
-
-        function __construct($spiece){
-            $this->spiece = $spiece;
-            updateSpiece();
-        }
-
-        public function getSpiece($spiece){
-            $spiece = /*database*/;
-            return $spiece;
-        }
-        
-        private function updateSpiece($spiece){
-            #1.search spiece number
-            #2.if exist, update
-            #3.else, create new position
-        }
+        private $conn = new \PDO("mysql:host=localhost;dbname=spiece","username_dbname", ""); //database connection
+        private $spiece;
     }

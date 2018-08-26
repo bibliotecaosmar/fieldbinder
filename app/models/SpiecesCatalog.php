@@ -1,20 +1,11 @@
 <?php
-    namespace \app\model;
+    namespace app\model;
     #====================================#
     # ==Show Datas of the Spiece Class== #
     #====================================#
     
-    class CatalogSpieces extends Spiece
+    class SpiecesCatalog extends Spiece
     {
-        $kingdom;
-        $page;
-        $catalog = {
-            $idMin;
-            $idPic;
-            $spiece;
-            $commonName;
-        }
-
         public function __construct($kingdom , $page){
             $this->kingdom = $kingdom;
             $this->page = $page;

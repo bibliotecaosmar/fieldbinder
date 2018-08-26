@@ -1,5 +1,5 @@
 <?php
-    namespace \app\model;
+    namespace app\model;
     #===========#
     #  ==Adm==  #
     #===========#
@@ -9,9 +9,4 @@
         public function editAccounts(){
 
         }
-        
-        public function editSpiece(){
-
-        }
-
     }

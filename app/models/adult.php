@@ -1,12 +1,10 @@
 <?php
-    namespace \app\model;
+    namespace app\model;
     #=================#
     # ==Adult Users== #
     #=================#
     
     class Adult extends User
     {
-        revisePictures(){
-            //    
-        }
+        protected $name;
     }
