@@ -1,5 +1,5 @@
 <?php
-    namespace Log;
+    namespace App\Log;
     #=================#
     # ==View of Logs==#
     #=================#

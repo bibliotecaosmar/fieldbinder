@@ -1,12 +1,30 @@
 <?php
-    namespace Routes;
+    namespace App\Routes;
     #============#
     # ==Routes== #
     #============#
 
     class Routes
     {
-        public function __construct(){
-            echo 'eae';
+        private $route;
+
+        public function __construct($route){
+            $this->route = $_SERVER['REQUEST_URI'];
+            $this->getRoute();
+        }
+
+        private function getRoute($route){
+            //define routes
+            switch($route){
+                case ['/']:
+                case ['/' , 'plant']:
+                case ['/' , 'animal']:
+                case ['/' , 'insect']:
+                case ['/' , 'mushroom']:
+                case ['/' , 'signin']:
+                case ['/' , 'signup']:
+                case ['/' , 'ourproposal']:
+                case ['/' , 'guide']:
+            }
         }
     }

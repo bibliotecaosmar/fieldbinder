@@ -6,7 +6,7 @@
     
     class Account
     {
-        private $conn = new \PDO("mysql:host=localhost;dbname=user","username_dbname", ""); //database connection
+        private $conn = new \PDO("mysql:host=localhost;dbname=user","root", ""); //database connection
   
         function registeAccount($email , $password , $nickname , $born , $name , $diploma){
             //Validation of values here

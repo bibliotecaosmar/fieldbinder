@@ -10,7 +10,6 @@
 
         public function _contruct($data){
             $this->data = $date;
-            registerData();
         }
 
         public function showData($usertype){

@@ -10,11 +10,10 @@
         private $view;
 
         public function __contruct(){
-           echo 'o sam é brabo';
-            /*$this->user = Http\Controllers\ControllerBehavior::getLogged();
-            $this->user = Http\Controllers\ControllerVehavior::checkUser();
-            $this->view = ($_POST['view']);
-            loadPage();*/
+            $this->user = ControllerLogin::getLogged();
+            $this->user = ControllerLogin::checkUser();
+            $this->view = ($_POST['view']) ?? 'index';
+            loadPage();
         }
 
         private function loadPage($user , $view){
