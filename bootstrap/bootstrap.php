@@ -2,15 +2,12 @@
     #===============#
     # ==Bootstrap== #
     #===============#
-    require_once '../config/config.php';
+    use App\Exceptions;
+    use App\Http\Controllers;
+    use App\Http\Request;
+    use App\Models;
+    //use App\Filters;
+    //use Routes;
+    //use Log;
 
-    //autoload of class
-    function loader($class){
-        $class = ROOT . DS . str_replace('\\' , DS , $class) . '.php';
-        require_once $class;
-    }
-    
-    spl_autoload_register('loader');
-
-    new app\http\controllers\IndexController;
-    new route\Routes;
+    new Routes;

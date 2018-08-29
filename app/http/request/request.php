@@ -1,29 +1,13 @@
 <?php
-    namespace app\http\request;
+    namespace App\Http\Request;
     #=====================#
     # ==Request Manager== #
     #=====================#
 
-    class Request implements RetreatPicture
+    class Request implements AcessLevel
     {
-        $action;
-
-        function __construct($action){
-            $this->action = $action;
-            switch($action){
-                //all request list
-            }
-        }
-        //Retreat pictures for upload
-        public function retreatPic(){
-
-        }
-        
-        public function forwardDataInput(){
-
-        }
-
-        public function validateRequest($request){
+        //Check acess level
+        public function checkAcessLevel(){
 
         }
     }

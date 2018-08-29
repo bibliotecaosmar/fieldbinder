@@ -1,23 +1,12 @@
 <?php
-    namespace \app\model;
+    namespace App\Model;
     #====================================#
     # ==Include of Datas from Spiecies== #
     #====================================#
     
     class IncludeData implements ShowData
     {
-        private $data = {
-            $spiecie;
-            $kingdom;
-            $habitat;
-            $commonName;
-            $idPic;
-            $idMin;
-            $author;
-            $data;
-            $hour;
-            $status;
-        };
+        private $data;
 
         public function _contruct($data){
             $this->data = $date;

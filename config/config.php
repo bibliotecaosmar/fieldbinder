@@ -3,7 +3,6 @@
     # ==Config== #
     #============#
 
-    define('DS' , DIRECTORY_SEPARATOR);
     define('ROOT', realpath('../'));
     define('VIEW' , 'resource/view/');
     define('SIGN_BUTTON' , 'resource/view/essential/signButton.php');

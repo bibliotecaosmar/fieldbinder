@@ -1,5 +1,5 @@
 <?php
-    namespace \app\model;
+    namespace App\Model;
     #============================#
     # ==Vonlunty Profissionals== #
     #============================#

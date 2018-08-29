@@ -1,5 +1,5 @@
 <?php
-    namespace app\model;
+    namespace App\Model;
     #=============#
     # ==Account== #
     #=============#
@@ -16,7 +16,7 @@
                 $register = $conn->prepare("INSERT INTO user (email , pass , nickname , born , userName , diploma) VALUE ($email , $password , $nickname , $born , $name , $diploma)");
                 $register->execute();
             }catch(\PDOException $e){
-                new Exception(05);
+                return $e->getMessage();
             }
         }
         
@@ -31,7 +31,7 @@
                     setcookie('user') = $user;
                 }
             }catch(\PDOException $e){
-                new Exception(01);
+                return $e->getMessage();
             }
         }
         

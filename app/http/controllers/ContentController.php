@@ -1,5 +1,5 @@
 <?php
-    namespace app\http\controllers;
+    namespace App\Http\Controllers;
     #========================#
     # ==Content Controller== #
     #========================#
@@ -11,7 +11,7 @@
         private $model;
         
         public function __construct($view){
-            $this->user = ControllerBehavior::getLogged()
+            $this->user = ControllerBehavior::getLogged();
             $this->user = ControllerBehavior::checkUser();
             $this->view = $view;
             $this->loadView();
