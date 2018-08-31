@@ -9,8 +9,7 @@
         private $route;
 
         public function __construct($route){
-            $this->route = $_SERVER['REQUEST_URI'];
-            $this->getRoute();
+            $this->route = explode('/' , $_SERVER['REQUEST_URI']);
         }
 
         private function getRoute($route){
