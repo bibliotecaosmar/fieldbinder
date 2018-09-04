@@ -10,19 +10,31 @@
         private $view;
         private $model;
 
-        public function __construct($user , $view , $model){
-            $this->user = $user;
-            $this->view = $view;
-            $this->model = $model;
+        public function __construct()
+        {
+            $this->user = $_COOKIE['user'] ?? 'undefined';
+            $this->view = $_POST['view'];
+            if(isset($_POST['action'])){ 
+                $this->executeAction();
+            }
+            $this->loadView();
         }
 
-        public function loadView($user , $view , $model){
-            $user = ($user = 'undefined') ? (ROOT . SIGN_BUTTON) : $user;
-            $view = GetView::getView($view);
-            $model = GetView::getModel($model);
-            echo require_once HEAD;
-            echo require_once $user;
-            echo require_once $view;
-            echo require_once FOOT;
+        private function executeAction($user , $view){
+            $action = $_POST['action'];
+            if(AcessLevel::checkLevelAcess($user , $view , $action)){
+                HandleAction::handleAction($action);
+            }
+        }
+        private function loadView($user , $view){
+            $model = GetModel::getModel($user , $view);
+            array_push($view, (($user = 'undefined') ? (ROOT . SIGN_BUTTON) : $user));
+            array_push($view, GetView::getView($view));
+            array_push($view, GetView::getModel($model));
+            require_once HEAD;
+            foreach($view as $elementy){
+                require $elementy;
+            }
+            require_once FOOT;
         }
     }
