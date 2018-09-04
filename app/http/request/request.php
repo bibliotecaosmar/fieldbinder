@@ -7,19 +7,22 @@
     class Request implements AcessLevel
     {
         //Check acess level
-        public function checkAcessLevel(){
-
-        }
-        /*get required form field if is there, else throw error message and stop script*/
-        public function getRegisterForm(ControllerForm $form){
-            if(!isset($_POST['email'])||!isset($_POST['password'])||!isset($_POST['nickname'])||!isset($_POST['born'])){
-                exit(new Exception(01));
+        public function checkAcessLevel(AcessLevel $user, AcessLevel $view, AcessLevel $action){
+            array_push($acess, $action);
+            array_push($acess, $user);
+            array_push($acess, $view);
+            //check if exist permission than from user as from view
+            switch($acess){
+                case ['']:
+                    return 1;
+                case ['']:
+                    return 1;
+                case ['']:
+                    return 1;
+                case ['']:
+                    return 1;
+                default:
+                    return 0;
             }
-            $form->email = $_POST['email'];
-            $form->password = $_POST['password'];
-            $form->nickname = $_POST['nickname'];
-            $form->born = $_POST['born'];
-            $form->name = (isset($_POST['name'])) ? ($_POST['name']) : 'none';
-            $form->diploma = (isset($_POST['diploma'])) ? ($_POST['diploma']) : 'none';
         }
     }
