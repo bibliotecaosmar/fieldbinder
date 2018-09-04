@@ -8,13 +8,19 @@
     {
         public function handleAction(HandleAction $action){
             switch($action){
-                case '':
+                case 'register':
                     break;
-                case '':
+                case 'login':
                     break;
-                case '':
+                case 'logout':
                     break;
-                case '':
+                case 'vote':
+                    break;
+                case 'reportPicture':
+                    break;
+                case 'submitData':
+                    break;
+                case 'editProfile':
                     break;
             }
         }
