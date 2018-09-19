@@ -16,12 +16,12 @@
             $this->view = $_POST['view'];
             if(isset($_POST['action'])){
                 $action = $_POST['action']; 
-                $this->view = $this->executeAction($user, $view, $view);
+                $this->view = $this->sendAction($user , $view, $action);
             }
             $this->loadView();
         }
 
-        private function executeAction($user , $view){
+        private function sendAction($user , $view , $action){
             $action = $_POST['action'];
             //check acess level
             if(AcessLevel::checkLevelAcess($user , $view , $action)){
