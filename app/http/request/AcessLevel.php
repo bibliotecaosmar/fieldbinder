@@ -4,5 +4,6 @@
 
     interface AcessLevel
     {
-        public function checkAcessLevel($user, $view, $action);
+        public function checkAcessLevelView($user, $view);
+        public function checkAcessLevelAction($user , $action);
     }
