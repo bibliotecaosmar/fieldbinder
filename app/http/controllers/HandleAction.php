@@ -1,5 +1,5 @@
 <?php
-    namespace App\Http\Controllers;
+    namespace Http\Controllers;
     #==================================#
     # ==Handler of Actions Interface== #
     #==================================#

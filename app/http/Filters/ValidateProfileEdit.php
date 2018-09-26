@@ -1,5 +1,5 @@
 <?php
-    namespace App\Http\Filter;
+    namespace Http\Filter;
     #=================================#
     # ==Validation for Profile Edit== #
     #=================================#

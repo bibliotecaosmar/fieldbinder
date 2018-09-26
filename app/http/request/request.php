@@ -1,5 +1,5 @@
 <?php
-    namespace App\Http\Request;
+    namespace Http\Request;
     #=====================#
     # ==Request Manager== #
     #=====================#
@@ -11,7 +11,7 @@
             //check if exist permission than from user as from view
             switch($view){
                 case ['editUsers']:
-                    if($user = ) 
+                    if($user = ) ;
                     return 0;
                 case ['profile']:
                     if($user != 'undefinided'){

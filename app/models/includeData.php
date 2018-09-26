@@ -1,5 +1,5 @@
 <?php
-    namespace App\Model;
+    namespace Model;
     #====================================#
     # ==Include of Datas from Spiecies== #
     #====================================#

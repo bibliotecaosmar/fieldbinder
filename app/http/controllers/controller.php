@@ -14,15 +14,15 @@
         public function __construct()
         {
             $this->user = $_COOKIE['user'] ?? 'undefined';
-            $this->view = $_POST['view'];
-            $this->model = GetModel::getModel($user , $view);
+            $this->view = $_POST['view'] ?? 'index';
+            $this->model = GetModel::getModel($this->user , $this->view);
             if(isset($_POST['action'])){ 
                 $this->action = $this->sendAction($this->user , $this->view);
             }
-            $this->loadView($user , $view , $action , $model);
+            $this->loadView($this->user , $this->view , $this->action , $this->model);
         }
         //Send action to handler and return if acess level is okey
-        private function sendAction($user , $view , $action){
+        private function sendAction($user , $view){
             $action = $_POST['action'];
             //check acess level
             if(AcessLevel::checkLevelAcessAction($user , $action)){
@@ -40,7 +40,9 @@
             require_once HEAD;
             require_once $user;
             require_once $view;
-            require_once $model;
+            foreach($model as $models){
+                require $models;
+            }
             require_once FOOT;
         }
     }

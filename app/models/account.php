@@ -1,12 +1,12 @@
 <?php
-    namespace App\Model;
+    namespace Model;
     #=============#
     # ==Account== #
     #=============#
     
     class Account
     {
-        private $conn = new \PDO("mysql:host=localhost;dbname=user","root", ""); //database connection
+        private $conn = new \PDO("mysql:host=localhost;dbname=user","Main", ""); //database connection
   
         function registeAccount($email , $password , $nickname , $born , $name , $diploma){
             //Validation of values here

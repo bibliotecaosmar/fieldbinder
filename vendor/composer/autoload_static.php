@@ -6,44 +6,38 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit7592ace339055d9afeed336555734433
 {
-    public static $prefixLengthsPsr4 = array (
-        'R' => 
-        array (
-            'Routes\\' => 7,
-        ),
-        'L' => 
-        array (
-            'Log\\' => 4,
-        ),
-        'A' => 
-        array (
-            'App\\' => 4,
-        ),
-    );
-
-    public static $prefixDirsPsr4 = array (
-        'Routes\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/routes',
-        ),
-        'Log\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/log',
-        ),
-        'App\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/Http/Controllers',
-            1 => __DIR__ . '/../..' . '/app/Http/Filter',
-            2 => __DIR__ . '/../..' . '/app/Http/Request',
-            3 => __DIR__ . '/../..' . '/app/Http/Model',
-        ),
+    public static $classMap = array (
+        'Exceptions\\Exception' => __DIR__ . '/../..' . '/app/Exceptions/Exception.php',
+        'Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'Http\\Controllers\\GetModel' => __DIR__ . '/../..' . '/app/Http/Controllers/GetModel.php',
+        'Http\\Controllers\\GetModelController' => __DIR__ . '/../..' . '/app/Http/Controllers/GetModelController.php',
+        'Http\\Controllers\\HandleAction' => __DIR__ . '/../..' . '/app/Http/Controllers/HandleAction.php',
+        'Http\\Controllers\\HandleActionController' => __DIR__ . '/../..' . '/app/Http/Controllers/HandleActionController.php',
+        'Http\\Filter\\SpiecesInput' => __DIR__ . '/../..' . '/app/Http/Filters/SpiecesInput.php',
+        'Http\\Filter\\UserInput' => __DIR__ . '/../..' . '/app/Http/Filters/UserInput.php',
+        'Http\\Filter\\ValidateData' => __DIR__ . '/../..' . '/app/Http/Filters/ValidateData.php',
+        'Http\\Filter\\ValidateLogin' => __DIR__ . '/../..' . '/app/Http/Filters/ValidateLogin.php',
+        'Http\\Filter\\ValidateProfileEdit' => __DIR__ . '/../..' . '/app/Http/Filters/ValidateProfileEdit.php',
+        'Http\\Filter\\ValidateRegister' => __DIR__ . '/../..' . '/app/Http/Filters/ValidateRegister.php',
+        'Http\\Filter\\ValidateVote' => __DIR__ . '/../..' . '/app/Http/Filters/ValidateVote.php',
+        'Http\\Request\\AcessLevel' => __DIR__ . '/../..' . '/app/Http/Request/AcessLevel.php',
+        'Http\\Request\\Request' => __DIR__ . '/../..' . '/app/Http/Request/Request.php',
+        'Log\\LogSystem' => __DIR__ . '/../..' . '/log/LogSystem.php',
+        'Model\\Account' => __DIR__ . '/../..' . '/app/Models/Account.php',
+        'Model\\Adm' => __DIR__ . '/../..' . '/app/Models/Adm.php',
+        'Model\\Adult' => __DIR__ . '/../..' . '/app/Models/Adult.php',
+        'Model\\Expert' => __DIR__ . '/../..' . '/app/Models/Expert.php',
+        'Model\\IncludeData' => __DIR__ . '/../..' . '/app/Models/IncludeData.php',
+        'Model\\ShowData' => __DIR__ . '/../..' . '/app/Models/ShowData.php',
+        'Model\\Spieces' => __DIR__ . '/../..' . '/app/Models/Spiecies.php',
+        'Model\\SpiecesCatalog' => __DIR__ . '/../..' . '/app/Models/SpiecesCatalog.php',
+        'Model\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit7592ace339055d9afeed336555734433::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit7592ace339055d9afeed336555734433::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit7592ace339055d9afeed336555734433::$classMap;
 
         }, null, ClassLoader::class);
     }

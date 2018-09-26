@@ -1,10 +1,10 @@
 <?php
-    namespace App\Http\Controllers;
+    namespace Http\Controllers;
     #=======================#
     # ==GetModel Interface== #
     #=======================#
 
     interface GetModel
     {
-        public function getModel($model);
+        public function getModel($user , $view);
     }

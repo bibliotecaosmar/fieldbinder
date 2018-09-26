@@ -1,5 +1,5 @@
 <?php
-    namespace App\Exceptions;
+    namespace Exceptions;
     #================#
     # ==Exceptions== #
     #================#

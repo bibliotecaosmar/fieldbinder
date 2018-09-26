@@ -1,5 +1,5 @@
 <?php
-    namespace App\Http\Request;
+    namespace Http\Request;
     //Retreat Picture
 
     interface AcessLevel

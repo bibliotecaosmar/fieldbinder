@@ -1,5 +1,5 @@
 <?php
-    namespace App\Model;
+    namespace Model;
     #====================================#
     # ==Show Datas of the Spiece Class== #
     #====================================#
