@@ -7,11 +7,12 @@
     class Request implements AcessLevel
     {
         //Check acess level of view
-        public function checkAcessLevelView(AcessLevel $user, AcessLevel $view){
+        public function checkAcessLevelView($user, $view){
             //check if exist permission than from user as from view
             switch($view){
                 case ['editUsers']:
-                    if($user = ) ;
+                    $account = new Account;
+                    if($user = $account-> ) ;
                     return 0;
                 case ['profile']:
                     if($user != 'undefinided'){

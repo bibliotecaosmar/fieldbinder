@@ -6,19 +6,16 @@
 
     class GetModelController implements GetModel
     {
-        public function getModel(GetModel $user, GetModel $view){
+        public function getModel($user, $view){
             //Obtain of Catalog or Account and User classes datas
             switch($view){
                 case ['profile']:
+                    //
                 case ['catalog']:
                     $view = CatalogSpieces::showCatalog($view , $_POST['page']);
                     return $view;
                 case ['spiece']:
-                    try{
-                        $spiece = new Spieces($_POST('spiece'));
-                    }catch(new /PDOException $e){
-                        //
-                    }
+                    $spiece = new Spieces($_POST('spiece'));
                     if($spiece->status = 'confirmed'){
                         array_push($info , $spiece->spiece);
                         array_push($info , $spiece->kingdom);
@@ -31,8 +28,7 @@
                     }
                     return new Exception('warning' , 'spiece' , 'not found');
                 default:
-                    return new Exception('alert' , 'spiece')
-                    break;
+                    return new Exception('alert' , 'spiece' , 'empty');
             }
         }
     }

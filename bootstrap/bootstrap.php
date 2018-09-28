@@ -5,4 +5,6 @@
 
     require_once '../vendor/autoload.php';
     
-    new Http\Controllers\Controller();
+    $model = new Http\Controllers\GetModelController();
+    $request = new Http\Request\Request();
+    new Http\Controllers\Controller($model, $request);
