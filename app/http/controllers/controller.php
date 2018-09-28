@@ -17,7 +17,7 @@
             $this->view = $_POST['view'] ?? 'index';
             $this->model = $model->getModel($this->user , $this->view);
             if(isset($_POST['action'])){ 
-                $this->action = $this->sendAction($this->user , $this->view , $request , $handleAction);
+                $this->action = $this->sendAction($this->user , $this->view , $request , $handler);
             }
             $this->loadView($this->user , $this->view , $this->action , $this->model);
         }

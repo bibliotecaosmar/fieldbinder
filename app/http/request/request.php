@@ -12,7 +12,9 @@
             switch($view){
                 case ['editUsers']:
                     $account = new Account;
-                    if($user = $account-> ) ;
+                    if($user = 'adm'){
+                        return 1;
+                    }
                     return 0;
                 case ['profile']:
                     if($user != 'undefinided'){

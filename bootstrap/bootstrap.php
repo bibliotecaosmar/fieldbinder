@@ -7,4 +7,4 @@
     
     $model = new Http\Controllers\GetModelController();
     $request = new Http\Request\Request();
-    new Http\Controllers\Controller($model, $request);
+    new Http\Controllers\Controller();
