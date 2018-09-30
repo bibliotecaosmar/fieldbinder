@@ -31,7 +31,7 @@
             }
         }
         //check acess level of action
-        public function checkAcessLevelAction(AcessLevel $user , AcessLevel $action){
+        public function checkAcessLevelAction($user , $action){
             //check if exist action option and acess level
             switch($action){
                 case ['']:

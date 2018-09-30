@@ -3,8 +3,27 @@
     # ==Config== #
     #============#
 
+    //SYSTEM VARIABLES
+    /*
+
+    #--POST--#
+    $_POST['user']
+    $_POST['view']
+    $_POST['atualView']
+    $_POST['action']
+    $_POST['formRegister']
+    $_POST['formSpiecie']
+    $_POST['editProfile']
+    $_POST['submitData']
+
+    #--COOKIE--#
+    $_COOKIE['user']
+    $_COOKIE['code']
+
+    */
+
     //ROOT
-    define('ROOT', realpath('../'));
+    define('ROOT', ('../'));
     //VIEW
     define('VIEW' , 'resource/view/');
     //MESSAGE

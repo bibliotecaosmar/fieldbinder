@@ -9,12 +9,12 @@
         public function getModel($user, $view){
             //Obtain of Catalog or Account and User classes datas
             switch($view){
-                case ['profile']:
+                case 'profile':
                     //
-                case ['catalog']:
+                case 'catalog':
                     $view = CatalogSpieces::showCatalog($view , $_POST['page']);
                     return $view;
-                case ['spiece']:
+                case 'spiece':
                     $spiece = new Spieces($_POST('spiece'));
                     if($spiece->status = 'confirmed'){
                         array_push($info , $spiece->spiece);
@@ -28,7 +28,7 @@
                     }
                     return new Exception('warning' , 'spiece' , 'not found');
                 default:
-                    return new Exception('alert' , 'spiece' , 'empty');
+                    return NULL;
             }
         }
     }

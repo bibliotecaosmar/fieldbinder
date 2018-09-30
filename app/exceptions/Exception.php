@@ -6,7 +6,7 @@
     
     class Exception
     {
-        public function __construct($type , $about , $message){
+        public function __invoke($type , $about , $message){
             $type = $this->setType($type);
             $about = $this->setAbout($about);
             $message = $message.(require CLOSETAG);

@@ -17,7 +17,7 @@
                         $redirect = new Controller();
                         $redirect->directIndex();
                         die();
-                    }catch(new /PDOException $e){
+                    }catch(PDOException $e){
 
                     }
                     break;
