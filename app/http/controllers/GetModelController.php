@@ -28,7 +28,7 @@
                     }
                     return new Exception('warning' , 'spiece' , 'not found');
                 default:
-                    return NULL;
+                    return array();
             }
         }
     }

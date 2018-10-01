@@ -11,7 +11,7 @@
         private $action;
         private $model;
 
-        public function __construct($model , $request , $handler , $exception){
+        public function __construct(GetModel $model , $request , HandleAction $handler , $exception){
             $this->user = $_COOKIE['user'] ?? 'undefined';
             $this->view = $_POST['view'] ?? 'index';
             $this->model = $model->getModel($this->user , $this->view);
@@ -34,16 +34,20 @@
         private function loadView($user , $view , $action , $model , $request){
             //Check acess level of view
             $view = $request->checkAcessLevelView($user , $view);
-            $user = 'undefined' ? (ROOT . SIGN_BUTTON) : $user;
             //Load page for user
-            require_once ROOT . HEAD;
-            echo $user;
-            require_once $view;
+            require ROOT . HEAD;
+            if($user = 'undefined'){
+                require ROOT . SIGN_BUTTON;
+             }else{
+                echo $user;
+             }
+            require $view;
             foreach($model as $models){
                 require DEFAULTAG;
                 echo $models;
                 require CLOSETAGDATA;
             }
-            require_once FOOT;
+            array_push($page , FOOT);
+            return $page;
         }
     }

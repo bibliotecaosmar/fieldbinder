@@ -23,7 +23,7 @@
     */
 
     //ROOT
-    define('ROOT', ('../'));
+    define('ROOT', '../');
     //VIEW
     define('VIEW' , 'resource/view/');
     //MESSAGE
@@ -32,7 +32,7 @@
     define('ERROR' , 'resource/view/message/openTagError.php');
     define('CLOSETAG' , 'resource/view/message/closeTag.php');
     //VIEW ELEMENTS
-    define('SIGN_BUTTON' , 'resource/view/essential/signButton.php');
+    define('SIGN_BUTTON' , '../resource/view/essential/signButton.php');
     define('FORM_PLANT', '/resource/view/forms/plantForm.php');
     define('FORM_ANIMAL', '/resource/view/forms/animalForm.php');
     define('FORM_INSECT', '/resource/view/forms/insectForm.php');
