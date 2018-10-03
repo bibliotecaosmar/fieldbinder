@@ -4,7 +4,7 @@
     # ==Exceptions== #
     #================#
     
-    class Exception
+    class Exception /* implements interface of the action reader*/
     {
         public function __invoke($type , $about , $message){
             $type = $this->setType($type);
@@ -16,17 +16,11 @@
         private function setType($type){
             switch($type){
                 case ['alert']:
-                    return require ALERT;
+                    return ALERT;
                 case ['warning']:
-                    return require WARNING;
+                    return WARNING;
                 case ['error']:
-                    return require ERROR;
-            }
-        }
-        //set about path
-        private function setAbout($about){
-            switch($about){
-                //message origin
+                    return ERROR;
             }
         }
     }

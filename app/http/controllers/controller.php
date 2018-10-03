@@ -15,10 +15,14 @@
             $this->user = $_COOKIE['user'] ?? 'undefined';
             $this->view = $_POST['view'] ?? 'index';
             $this->model = $model->getModel($this->user , $this->view);
+            //Check acess level of view
+            if(!$request->checkAcessLevelView($this->user , $this->view)){
+                $this->view = 'plant';
+            }
             if(isset($_POST['action'])){
                 $this->action = $this->sendAction($this->user , $this->view , $request , $handler , $exception);
             }
-            $this->loadView($this->user , $this->view , $this->action , $this->model , $request , $exception);
+            $this->loadView($this->user , $this->view , $this->action , $this->model);
         }
         //Send action to handler and return if acess level is okey
         private function sendAction($user , $view, $request , $handler , $exception){
@@ -31,23 +35,20 @@
             return $exception('warning' , 'acessLevel' , 'notAvoid');
         }
         //Load views elementies       
-        private function loadView($user , $view , $action , $model , $request){
-            //Check acess level of view
-            $view = $request->checkAcessLevelView($user , $view);
+        private function loadView($user , $view , $action , $model){
             //Load page for user
-            require ROOT . HEAD;
+            require_once ROOT . VIEW . HEAD;
             if($user = 'undefined'){
-                require ROOT . SIGN_BUTTON;
+                require_once ROOT . VIEW . SIGN_BUTTON;
              }else{
                 echo $user;
              }
-            require $view;
+            require_once ROOT . VIEW . $view . '.php';
             foreach($model as $models){
-                require DEFAULTAG;
+                require ROOT . VIEW . DEFAULTAG;
                 echo $models;
-                require CLOSETAGDATA;
+                require ROOT . VIEW . CLOSETAGDATA;
             }
-            array_push($page , FOOT);
-            return $page;
+            require ROOT . VIEW . FOOT;
         }
     }
