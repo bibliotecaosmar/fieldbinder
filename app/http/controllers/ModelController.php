@@ -4,7 +4,7 @@
     # ==Getter of Model== #
     #=====================#
 
-    class GetModelController implements GetModel
+    class ModelController implements GetModel, LoadModel
     {
         public function getModel($user, $view){
             //Obtain of Catalog or Account and User classes datas
@@ -13,22 +13,26 @@
                     //
                 case 'catalog':
                     $view = CatalogSpieces::showCatalog($view , $_POST['page']);
-                    return $view;
+                    return $model;
                 case 'spiece':
                     $spiece = new Spieces($_POST('spiece'));
                     if($spiece->status = 'confirmed'){
-                        array_push($info , $spiece->spiece);
-                        array_push($info , $spiece->kingdom);
-                        array_push($info , $spiece->habitat);
-                        array_push($info , $spiece->commonName);
-                        array_push($info , $spiece->pic);
-                        array_push($info , $spiece->authors);
+                        array_push($model , $spiece->spiece);
+                        array_push($model , $spiece->kingdom);
+                        array_push($model , $spiece->habitat);
+                        array_push($model , $spiece->commonName);
+                        array_push($model , $spiece->pic);
+                        array_push($model , $spiece->authors);
 
-                        return $info;
+                        return $model;
                     }
                     return new Exception('warning' , 'spiece' , 'not found');
                 default:
                     return array();
             }
+        }
+
+        public function loadModel($model){
+
         }
     }

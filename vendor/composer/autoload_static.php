@@ -8,11 +8,12 @@ class ComposerStaticInit7592ace339055d9afeed336555734433
 {
     public static $classMap = array (
         'Exceptions\\Exception' => __DIR__ . '/../..' . '/app/Exceptions/Exception.php',
+        'Http\\Controllers\\ActionController' => __DIR__ . '/../..' . '/app/Http/Controllers/ActionController.php',
         'Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'Http\\Controllers\\GetModel' => __DIR__ . '/../..' . '/app/Http/Controllers/GetModel.php',
-        'Http\\Controllers\\GetModelController' => __DIR__ . '/../..' . '/app/Http/Controllers/GetModelController.php',
         'Http\\Controllers\\HandleAction' => __DIR__ . '/../..' . '/app/Http/Controllers/HandleAction.php',
-        'Http\\Controllers\\HandleActionController' => __DIR__ . '/../..' . '/app/Http/Controllers/HandleActionController.php',
+        'Http\\Controllers\\ModelController' => __DIR__ . '/../..' . '/app/Http/Controllers/ModelController.php',
+        'Http\\Controllers\\ModelReader' => __DIR__ . '/../..' . '/app/Http/Controllers/ModelReader.php',
         'Http\\Filter\\SpiecesInput' => __DIR__ . '/../..' . '/app/Http/Filters/SpiecesInput.php',
         'Http\\Filter\\UserInput' => __DIR__ . '/../..' . '/app/Http/Filters/UserInput.php',
         'Http\\Filter\\ValidateData' => __DIR__ . '/../..' . '/app/Http/Filters/ValidateData.php',

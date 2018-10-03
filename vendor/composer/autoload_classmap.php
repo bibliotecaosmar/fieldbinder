@@ -7,11 +7,12 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Exceptions\\Exception' => $baseDir . '/app/Exceptions/Exception.php',
+    'Http\\Controllers\\ActionController' => $baseDir . '/app/Http/Controllers/ActionController.php',
     'Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'Http\\Controllers\\GetModel' => $baseDir . '/app/Http/Controllers/GetModel.php',
-    'Http\\Controllers\\GetModelController' => $baseDir . '/app/Http/Controllers/GetModelController.php',
     'Http\\Controllers\\HandleAction' => $baseDir . '/app/Http/Controllers/HandleAction.php',
-    'Http\\Controllers\\HandleActionController' => $baseDir . '/app/Http/Controllers/HandleActionController.php',
+    'Http\\Controllers\\ModelController' => $baseDir . '/app/Http/Controllers/ModelController.php',
+    'Http\\Controllers\\ModelReader' => $baseDir . '/app/Http/Controllers/ModelReader.php',
     'Http\\Filter\\SpiecesInput' => $baseDir . '/app/Http/Filters/SpiecesInput.php',
     'Http\\Filter\\UserInput' => $baseDir . '/app/Http/Filters/UserInput.php',
     'Http\\Filter\\ValidateData' => $baseDir . '/app/Http/Filters/ValidateData.php',
