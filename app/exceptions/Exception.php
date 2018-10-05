@@ -1,10 +1,10 @@
 <?php
-    namespace Exceptions;
+    namespace App\Exceptions;
     #================#
     # ==Exceptions== #
     #================#
     
-    class Exception implements NotificationMessage /* implements interface of the action reader*/
+    class Exception implements NotificationMessage
     {
         public function __invoke($type , $about , $message){
             $type = $this->setType($type);

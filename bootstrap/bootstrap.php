@@ -6,9 +6,10 @@
     require_once '../config/config.php';
     require_once '../vendor/autoload.php';
     
-    $model = new Http\Controllers\ModelController();
-    $handler = new Http\Controllers\ActionController();
-    $request = new Http\Request\Request();
-    $exception = new Exception();
+    $view = new App\Http\Controllers\ViewController();
+    $model = new App\Http\Controllers\ModelController();
+    $handler = new App\Http\Controllers\ActionController();
+    $request = new App\Http\Request\Request();
+    $exception = new App\Exceptions\Exception();
     
-    new Http\Controllers\Controller($model , $request , $handler , $exception);
+    new App\Http\Controllers\Controller($view , $model , $request , $handler , $exception);

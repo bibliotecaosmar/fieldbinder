@@ -26,6 +26,7 @@
     define('ROOT',  '../');
     //VIEW
     define('VIEW' , 'resource/');
+    define('PAGE' , 'views/');
     //ESSENTIAL ELEMENTS
     define('HEAD' , 'essential/head.php');
     define('FOOT' , 'essential/foot.php');

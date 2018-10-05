@@ -3,9 +3,7 @@
     "description": "A application that allows list spieces of the animals, bugs, plants and mushroom by children.",
     "autoload": {
         "psr-4": {
-            "Http\\": "app/Http/",
-            "Exception\\": "app/Exception/",
-            "Model\\": "app/Models/",
+            "App\\": "app/",
             "Log\\": "log/"
             }
         }

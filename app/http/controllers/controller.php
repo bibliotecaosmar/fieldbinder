@@ -1,5 +1,5 @@
 <?php
-    namespace Http\Controllers;
+    namespace App\Http\Controllers;
     #================#
     # ==Controller== #
     #================#
@@ -11,7 +11,7 @@
         private $action;
         private $model;
 
-        public function __construct(GetModel $model , $request , HandleAction $handler , NotificationMessage $exception){
+        public function __construct(LoadView $view , GetModel $model , $request , HandleAction $handler , $exception){
             $this->user = $_COOKIE['user'] ?? 'undefined';
             $this->view = $_POST['view'] ?? 'index';
             if(!$request->checkAcessLevelView($this->user , $this->view)){

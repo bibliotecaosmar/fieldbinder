@@ -1,5 +1,5 @@
 <?php
-    namespace Http\Controllers;
+    namespace App\Http\Controllers;
     #========================#
     # ==Actions Controller== #
     #========================#

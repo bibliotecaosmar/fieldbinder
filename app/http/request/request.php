@@ -1,5 +1,5 @@
 <?php
-    namespace Http\Request;
+    namespace App\Http\Request;
     #=====================#
     # ==Request Manager== #
     #=====================#
