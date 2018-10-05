@@ -10,18 +10,18 @@
         public function checkAcessLevelView($user, $view){
             //check if exist permission than from user as from view
             switch($view){
-                case ['editUsers']:
+                case 'editUsers':
                     $account = new Account;
                     if($user = 'adm'){
                         return 1;
                     }
                     return 0;
-                case ['profile']:
+                case 'profile':
                     if($user != 'undefinided'){
                         return 1;
                     }
                     return 0;
-                case ['submitData']:
+                case 'submitData':
                     if($user != 'undefinided'){
                         return 1;
                     }

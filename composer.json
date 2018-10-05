@@ -2,13 +2,11 @@
     "name": "fieldbinder",
     "description": "A application that allows list spieces of the animals, bugs, plants and mushroom by children.",
     "autoload": {
-        "classmap": [
-            "app/Exceptions/",
-            "app/Http/Controllers/",
-            "app/Http/Filters/",
-            "app/Http/Request/",
-            "app/Models/",
-            "log/"
-            ]
+        "psr-4": {
+            "Http\\": "app/Http/",
+            "Exception\\": "app/Exception/",
+            "Model\\": "app/Models/",
+            "Log\\": "log/"
+            }
         }
     }

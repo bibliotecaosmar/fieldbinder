@@ -3,8 +3,9 @@
     # ==Bootstrap== #
     #===============#
 
+    require_once '../config/config.php';
     require_once '../vendor/autoload.php';
-
+    
     $model = new Http\Controllers\ModelController();
     $handler = new Http\Controllers\ActionController();
     $request = new Http\Request\Request();

@@ -6,5 +6,5 @@
 
     interface HandleAction
     {
-        public function handleAction($action);
+        public function handleAction($user , $action);
     }

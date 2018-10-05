@@ -4,24 +4,14 @@
     # ==View Controller== #
     #=====================#
 
-    class ViewController implements GetView , LoadView
+    class ViewController implements LoadView
     {
-        public function getView($user , $request){
-            $view = $_POST['view'] ?? 'index';
-            //Check acess level of view
-            if(!$request->checkAcessLevelView($user , $view)){
-                return $view = 'Page no avoid ';
-            }
-            return $view;
-        }
-        public function loadView($view){
+        public function loadView($view , $exception){
             //load view
-            if($view = 'Page no avoid'){
-                require ROOT . VIEW . OPENTAGWARNING;
-                echo $view;
-                require ROOT . VIEW . CLOSETAG;
-                exit();
+            try{
+                require_once ROOT . VIEW . $view . '.php';
+            }catch(Exception $e){
+                return $exception->showMessage($exception('warning' , 'Page' , 'Not found'));
             }
-            require_once ROOT . VIEW . $view . '.php';
         }
     }

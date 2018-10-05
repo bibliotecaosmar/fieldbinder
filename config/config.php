@@ -39,5 +39,6 @@
     define('ALERT' , 'message/openTagAlert.php');
     define('WARNING' , 'message/openTagWarning.php');
     define('ERROR' , 'message/openTagError.php');
+    define('BETWEENTAG' , 'message/betweenTag.php');
     define('CLOSETAG' , 'message/closeTag.php');
     

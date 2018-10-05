@@ -4,7 +4,7 @@
     # ==Reader of Model== #
     #=====================#
 
-    interface ModelReader
+    interface LoadModel
     {
         public function loadModel($model);
     }

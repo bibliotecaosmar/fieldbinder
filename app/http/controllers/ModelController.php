@@ -12,7 +12,7 @@
                 case 'profile':
                     //
                 case 'catalog':
-                    $view = CatalogSpieces::showCatalog($view , $_POST['page']);
+                    $model = CatalogSpieces::showCatalog($view , $_POST['page']);
                     return $model;
                 case 'spiece':
                     $spiece = new Spieces($_POST('spiece'));
@@ -26,13 +26,12 @@
 
                         return $model;
                     }
-                    return new Exception('warning' , 'spiece' , 'not found');
                 default:
-                    return array();
+                    return ;
             }
         }
 
         public function loadModel($model){
-
+            
         }
     }

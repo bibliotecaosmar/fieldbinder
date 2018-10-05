@@ -11,20 +11,29 @@
         private $action;
         private $model;
 
-        public function __construct(GetModel $model , $request , HandleAction $handler , $exception){
+        public function __construct(GetModel $model , $request , HandleAction $handler , NotificationMessage $exception){
             $this->user = $_COOKIE['user'] ?? 'undefined';
-            $this->view = $view->getView($this->user , $request);
+            $this->view = $_POST['view'] ?? 'index';
+            if(!$request->checkAcessLevelView($this->user , $this->view)){
+                $this->view = 'E';
+            }
             if(isset($_POST['action'])){
-                $this->action = $handle->handleAction($this->user , $request);
+                $this->action = $_POST['action'];
+                if($request->checkLevelAcessAction($this->user , $this->action)){
+                    $this->action = $handle->handleAction($this->user , $this->action);
+                }
             }
             $this->model = $model->getModel($this->user , $this->view);            
-                //check acess level
 
             //Load page for user
             require_once ROOT . VIEW . HEAD;
-            require_once ($user = 'undefined') ? (ROOT . VIEW . SIGN_BUTTON) : $user;
-            $view->loadView($this->view);
-            $model->loadModel($this->model);//$model
+            if($user = 'undefined'){
+                require_once ROOT . VIEW . SIGN_BUTTON;
+            }else{
+                echo $user;
+            }
+            $exception->showMessage($view->loadView($this->view));
+            $exception->showMessage($model->loadModel($this->model));
             require ROOT . VIEW . FOOT;
         }
     }
