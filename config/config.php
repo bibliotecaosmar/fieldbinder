@@ -42,4 +42,7 @@
     define('ERROR' , 'message/openTagError.php');
     define('BETWEENTAG' , 'message/betweenTag.php');
     define('CLOSETAG' , 'message/closeTag.php');
+
+    //SYSTEM VARIABLE
+    define('VIEW_LIST' , ['index' , 'guide' , 'signin' , 'signup' , 'plant' , 'animal' , 'insect' , 'mushroom' , 'ourproposal']);
     

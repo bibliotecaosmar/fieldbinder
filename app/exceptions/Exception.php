@@ -6,15 +6,17 @@
     
     class Exception implements NotificationMessage
     {
-        public function __invoke($type , $about , $message){
-            $type = $this->setType($type);
-            array_push($notification , $type);
-            array_push($notification , BETWEENTAG1);
-            array_push($notification , $about);
-            array_push($notification , BETWEENTAG2);
-            array_push($notification , $message);
-            array_push($notification , CLOSETAG);
-            return $notification;
+        //interface
+        public function showMessage($notification = NULL){
+            if($notification = NULL){
+                $type = $this->setType($notification[0]);
+                require ROOT . VIEW . $type . '.php';
+                require ROOT . VIEW . BETWEENTAG1 . '.php';
+                echo $notification[1];
+                require ROOT . VIEW . BETWEENTAG2 . '.php';
+                echo $notification[2];
+                require ROOT . VIEW . CLOSETAG . '.php';
+            }
         }
         //set type path
         private function setType($type){
@@ -27,17 +29,4 @@
                     return ERROR;
             }
         }
-        //interface
-        public function showMessage($notification = NULL){
-            if(isset($notification)){
-                require $notification[0];
-                require $notification[1];
-                require $notification[2];
-                echo $notification[3];
-                require $notification[4];
-                echo $notification[5];
-                require $notification[6];
-            }
-        }
-
     }

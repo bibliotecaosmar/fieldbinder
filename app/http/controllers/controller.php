@@ -15,7 +15,7 @@
             $this->user = $_COOKIE['user'] ?? 'undefined';
             $this->view = $_POST['view'] ?? 'index';
             if(!$request->checkAcessLevelView($this->user , $this->view)){
-                $this->view = 'E';
+                $this->view = '';
             }
             if(isset($_POST['action'])){
                 $this->action = $_POST['action'];
