@@ -8,9 +8,10 @@
     {
         public function loadView($view){
             //load view
-            if(isset(VIEW_LIST[$view])){
-                require_once ROOT . VIEW . PAGE . $view . '.php';
-                die();
+            $view = ROOT . VIEW . PAGE . $view . '.php';
+            if(file_exists($view)){
+                require_once $view;
+                return NULL;
             }
             return array('warning' , 'Page' , 'Not found');
         }

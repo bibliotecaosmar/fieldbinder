@@ -44,5 +44,5 @@
     define('CLOSETAG' , 'message/closeTag.php');
 
     //SYSTEM VARIABLE
-    define('VIEW_LIST' , ['index' , 'guide' , 'signin' , 'signup' , 'plant' , 'animal' , 'insect' , 'mushroom' , 'ourproposal']);
+    define('VIEW_LIST' , array('index' , 'guide' , 'signin' , 'signup' , 'plant' , 'animal' , 'insect' , 'mushroom' , 'ourproposal'));
     
