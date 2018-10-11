@@ -10,11 +10,9 @@
         protected $email;
         protected $born;
 
-        public function __contruct($nickname , $email , $born){
-            $this->nickname = $nickname;
-            $this->email = $email;
-            $this->born = $born;
-        }
+        public function showProfile(){}
+        
+        public function showValidateData(){}
 
         public function submitData(){}
         

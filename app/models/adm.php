@@ -6,7 +6,9 @@
     
     final class Adm extends Adult
     {
-        public function editAccounts(){
-
-        }
+        public function showProfile(){}
+        
+        public function showValidateData(){}
+    
+        public function manageAccounts(){}
     }

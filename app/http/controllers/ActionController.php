@@ -6,7 +6,7 @@
 
     class ActionController implements HandleAction
     {
-        public function handleAction($user , $action){
+        public function handleAction($user, $action){
             //Check level of acess in action
             switch($action){
                 case 'register':
@@ -14,7 +14,7 @@
                 case 'login':
                     try{
                         $login = new Account();
-                        $login->validateUser($_POST['login'] , $_POST['password']);
+                        $login->validateUser($_POST['login'], $_POST['password']);
                         $redirect = new Controller();
                         $redirect->directIndex();
                         die();
@@ -23,7 +23,7 @@
                     }
                     break;
                 case 'logout':
-                    setcookie('user' , NULL);
+                    setcookie('user', NULL);
                     break;
                 case 'vote':
                     break;

@@ -1,4 +1,4 @@
 <!--Format for unlogged users-->
-<button action='signIn'>Signin</button>
+<button name="view" value="signin" method="post">Signin</button>
 <h2> or </h2>
-<button action='signUp'>Signup</button>
+<button name="view" value="signup" method="post">Signup</button>

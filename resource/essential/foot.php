@@ -2,6 +2,6 @@
         <!--Footer-->
         <footer>
             <!--adtives informations about the software-->
-            <h3>Fooooooooooot</h3>
+            <h4>Criador: Osmar Pereira</h4>
         </footer>
     </html>

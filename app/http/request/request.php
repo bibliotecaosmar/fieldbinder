@@ -31,11 +31,15 @@
             }
         }
         //check acess level of action
-        public function checkAcessLevelAction($user , $action){
+        public function checkAcessLevelAction($user, $action){
             //check if exist action option and acess level
             switch($action){
                 case ['']:
                     return;
             }
+        }
+        //check acess level of model
+        public function checkAcessLevelModel($user, $view){
+            
         }
     }

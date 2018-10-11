@@ -12,4 +12,4 @@
     $request = new App\Http\Request\Request();
     $exception = new App\Exceptions\Exception();
     
-    new App\Http\Controllers\Controller($view , $model , $request , $handler , $exception);
+    new App\Http\Controllers\Controller($view, $model, $request, $handler, $exception);

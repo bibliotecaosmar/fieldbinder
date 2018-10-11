@@ -4,17 +4,17 @@
     # ==Spieces== #
     #=============#
     
-    class Spieces
+    class Spieces implements SpiecesCatalog , ShowData
     {
-        private $conn = new \PDO("mysql:host=localhost;dbname=spiece","username_dbname", ""); //database connection
         private $spiece;
+        private $kingdom;
+        private $habitat;
+        private $commonName;
+        private $pic;
+        private $status;
+        private $author;
 
-        public function __construct($spiece){
-            $this->spiece = $spiece;
-            return getSpiece();
-        }
-
-        public function getSpiece($spiece){
+        public function getSpiece($spiece, OperatorDB $conn){
             try{
                 $getspiece = $conn->prepare("SELECT INTO spiece(:spiece) WHERE ($spiece)");
                 $getspiece->fetch($spiece);
@@ -23,4 +23,21 @@
                 $e->getMessage();
             }
         }
+        //Interface CatalogSpieces
+        public function showCatalog($kingdom, $view){
+            //return array with model
+        }
+
+        public function showData($usertype){
+            //show data depending of usertype
+        }
+
+        public function validadeData($datatype){
+            //switch the status of the spiece depending of the *Business Rule
+        }
+
+        public function registerData($datatype){
+            //register all and any data sent for user            
+        }
+
     }

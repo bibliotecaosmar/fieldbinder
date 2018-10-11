@@ -8,7 +8,9 @@
     {
         private $diploma;
         
-        function fastInclude(){
-            
-        }
+        public function showProfile(){}
+        
+        public function showValidateData(){}
+
+        public function fastInclude(){}
     }
