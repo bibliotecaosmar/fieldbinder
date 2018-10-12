@@ -34,8 +34,22 @@
         public function checkAcessLevelAction($user, $action){
             //check if exist action option and acess level
             switch($action){
-                case ['']:
-                    return;
+                case 'updateProfile'||'deleteProfile':
+                    $user = $account->checkUser($user);
+                    if($user = 'adm'){
+                        //check user and password in an interface of the Account Class
+                    }
+                    return 0;
+                case 'reportPicture':
+                    if($user = $this->confirmeAdm()){
+                        return 1;
+                    }
+                    return 0;
+                default:
+                    if($user != 'undefined'){
+                        return 1;
+                    }
+                    return 0;
             }
         }
         //check acess level of model

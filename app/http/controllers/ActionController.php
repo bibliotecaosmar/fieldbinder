@@ -31,7 +31,9 @@
                     break;
                 case 'submitData':
                     break;
-                case 'editProfile':
+                case 'updateProfile':
+                    break;
+                case 'deleteAccount':
                     break;
                 default:
                     return 'action not avoid';

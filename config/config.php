@@ -20,6 +20,19 @@
     $_COOKIE['user']
     $_COOKIE['code']
 
+    +---------------+
+    |    actions    |
+    +---------------+
+    |login          |
+    |logout         |
+    |register       |
+    |updateProfile  |
+    |deleteAccount  |
+    |submitData     |
+    |vote           |
+    |reportPicture  |
+    +---------------+
+
     */
 
     //ROOT

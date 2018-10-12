@@ -14,13 +14,13 @@
         public function getModel($model, $view){
             switch($view){
                 case 'editUsers':
-                    return $model->editUsers();
+                    return $model->manageAccounts($user, $password);
                 case 'profile':
-                    return $model->showProfile();
+                    return $model->showProfile($user);
                 case 'spiece':
-                    return $model->getSpiece();
+                    return $model->getSpiece($spiece);
                 case 'catalog':
-                    return $model->showCatalog();
+                    return $model->showCatalog($view);
             }
         }
 
