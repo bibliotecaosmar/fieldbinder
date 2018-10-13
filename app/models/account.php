@@ -28,7 +28,7 @@
             $conn = $db->userConnection();
             $conn->prepare("SELECT * FROM user WHERE :user");
             $conn->bindValue(":user", $user);
-            $conn->fenchAll();
+            $conn->execute();
         }
         
         public function delAccount($db, $user, $password){}
