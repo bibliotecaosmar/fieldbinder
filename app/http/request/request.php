@@ -13,21 +13,21 @@
                 case 'editUsers':
                     $account = new Account;
                     if($user = 'adm'){
-                        return 1;
+                        return TRUE;
                     }
-                    return 0;
+                    return FALSE;
                 case 'profile':
                     if($user != 'undefinided'){
-                        return 1;
+                        return TRUE;
                     }
-                    return 0;
+                    return FALSE;
                 case 'submitData':
                     if($user != 'undefinided'){
-                        return 1;
+                        return TRUE;
                     }
-                    return 0;
+                    return FALSE;
                 default:
-                    return 1;
+                    return TRUE;
             }
         }
         //check acess level of action
@@ -39,17 +39,17 @@
                     if($user = 'adm'){
                         //check user and password in an interface of the Account Class
                     }
-                    return 0;
+                    return FALSE;
                 case 'reportPicture':
                     if($user = $this->confirmeAdm()){
-                        return 1;
+                        return TRUE;
                     }
-                    return 0;
+                    return FALSE;
                 default:
                     if($user != 'undefined'){
-                        return 1;
+                        return TRUE;
                     }
-                    return 0;
+                    return FALSE;
             }
         }
         //check acess level of model

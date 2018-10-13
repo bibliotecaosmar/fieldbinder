@@ -9,34 +9,29 @@
         private $user; //database connection
         private $password;
 
-        public function registeAccount($email, $password, $nickname, $born, $name, $diploma){
+        public function registeAccount($db, $email, $password, $nickname, $born, $name, $diploma){
             //Validation of values here
-            try{
-                $register = $conn->prepare("INSERT INTO user (email, pass, nickname, born, userName, diploma) VALUE ($email , $password , $nickname , $born , $name , $diploma)");
-                $register->execute();
-            }catch(\PDOException $e){
-                throw $e->getMessage();
+        
+        }
+        public function validateAccount($db, $user, $password){
+            $conn = $db->userConnection();
+            $conn->prepare("SELECT * FROM user WHERE (:user, :pass)");
+            $conn->bindValue(":user", $user);
+            $conn->bindValue(":pass", $password);
+            if($conn->excecute()){
+               return TRUE; 
             }
+            return FALSE;
         }
         
-        public function validateAccount($user, $password){
-            try{
-                $validate = $conn->prepare("SELECT * FROM user WHERE (:user, :pass)");
-                $validate->bindValue(":user", $user);
-                $validate->bindValue(":pass", $password);
-                if($validate->execute()){
-                    $setcookie = $conn->prepare("SELECT * FROM user WHERE :user");
-                    $setcookie->bindParam(":nickname", $user);
-                    setcookie('user', $user);
-                }
-            }catch(\PDOException $e){
-                throw $e->getMessage();
-            }
+        public function showAccount($db, $user){
+            $conn = $db->userConnection();
+            $conn->prepare("SELECT * FROM user WHERE :user");
+            $conn->bindValue(":user", $user);
+            $conn->fenchAll();
         }
         
-        public function showAccounts($user, $password){}
-        
-        public function delAccount($user, $password){}
+        public function delAccount($db, $user, $password){}
 
-        public function updateAccount($user, $password){}
+        public function updateAccount($db, $user, $password){}
     }
