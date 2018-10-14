@@ -53,7 +53,22 @@
             }
         }
         //check acess level of model
-        public function checkAcessLevelModel($user, $view){
-            
+        public function checkAcessLevelModel(){
+            switch($user){
+                case 'adm':
+                    $user = new Adm;
+                    return $user;
+                case 'adult':
+                    $user = new Adult;
+                    return $user;
+                case 'expert':
+                    $user = new Expert;
+                    return $user;
+                case 'user':
+                    $user = new User;
+                    return $user;
+                default:
+                    return NULL;
+            }
         }
     }

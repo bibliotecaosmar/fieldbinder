@@ -11,7 +11,7 @@
         private $infoSpiece;
         private $infoProfile;
 
-        public function getModel($model, $view){
+        public function getModel($model){
             switch($view){
                 case 'editUsers':
                     return $model->manageAccounts($user, $password);
@@ -21,10 +21,13 @@
                     return $model->getSpiece($spiece);
                 case 'catalog':
                     return $model->showCatalog($view);
+                default:
+                    return NULL;
             }
         }
-
         public function loadModel($model){
-            
+           foreach($model as $models){
+
+           }
         }
     }

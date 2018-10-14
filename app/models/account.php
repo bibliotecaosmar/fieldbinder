@@ -4,7 +4,7 @@
     # ==Account== #
     #=============#
     
-    class Account
+    class Account extends Database
     {
         private $user; //database connection
         private $password;
@@ -13,8 +13,8 @@
             //Validation of values here
         
         }
-        public function validateAccount($db, $user, $password){
-            $conn = $db->userConnection();
+        public function validateAccount($user, $password){
+            $conn = self::databaseConnection();
             $conn->prepare("SELECT * FROM user WHERE (:user, :pass)");
             $conn->bindValue(":user", $user);
             $conn->bindValue(":pass", $password);
@@ -24,14 +24,15 @@
             return FALSE;
         }
         
-        public function showAccount($db, $user){
-            $conn = $db->userConnection();
+        public function showAccount($user){
+            $conn = self::databaseConnection();
             $conn->prepare("SELECT * FROM user WHERE :user");
+            $conn->bindValue(":nickname", $nickname);
             $conn->bindValue(":user", $user);
             $conn->execute();
         }
         
-        public function delAccount($db, $user, $password){}
+        public function delAccount($user, $password){}
 
-        public function updateAccount($db, $user, $password){}
+        public function updateAccount($user, $password){}
     }

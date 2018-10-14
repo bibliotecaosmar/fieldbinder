@@ -4,7 +4,7 @@
     # ==Data of Users== #
     #===================#
     
-    class User
+    class User extends Database
     {
         protected $nickname;
         protected $email;

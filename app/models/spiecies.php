@@ -4,7 +4,7 @@
     # ==Spieces== #
     #=============#
     
-    class Spieces implements SpiecesCatalog , ShowData
+    class Spieces extends Database implements SpiecesCatalog
     {
         private $spiece;
         private $kingdom;
@@ -14,14 +14,8 @@
         private $status;
         private $author;
 
-        public function getSpiece($spiece, OperatorDB $conn){
-            try{
-                $getspiece = $conn->prepare("SELECT INTO spiece(:spiece) WHERE ($spiece)");
-                $getspiece->fetch($spiece);
-                $getspiece->excecute();
-            }catch(\PDOException $e){
-                $e->getMessage();
-            }
+        public function getSpiece($spiece){
+    
         }
         //Interface CatalogSpieces
         public function showCatalog($kingdom, $view){

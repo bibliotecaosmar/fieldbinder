@@ -4,25 +4,16 @@
     # ==Database== #
     #==============#
 
-    class Database implements UserDB, SpiecesDB
+    abstract class Database
     {
         private $db;
         ///UserDB interface
-        public function userConnection($user){
+        public function databaseConnection(){
             try{
-                $this->db = new PDO("mysql: host = localhost; dbname = user", "Main" , "");
+                $this->db = new PDO("mysql: host = localhost; dbname = fildbinder", "Main" , "");
                 return $this->db;
             }catch(PDOException $e){
                 return FALSE;
             }
-        }
-        //SpiecesDB interface
-        public function spiecesConnection($spiece){
-            try{
-                $this->db = new PDO("mysql: host = localhost; dbname = spieces", "Main" , "");
-                return $this->db;
-            }catch(PDOException $e){
-                return FALSE;
-            }
-        }
+        }   
     }
