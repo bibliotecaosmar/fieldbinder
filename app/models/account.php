@@ -26,13 +26,24 @@
         
         public function showAccount($user){
             $conn = self::databaseConnection();
-            $conn->prepare("SELECT * FROM user WHERE :user");
-            $conn->bindValue(":nickname", $nickname);
-            $conn->bindValue(":user", $user);
-            $conn->execute();
+            $conn->prepare("SELECT nickname, pic, email, born FROM user WHERE :nickname = $user INTO (:nickname, :pic, :email, :born)");
+            $conn->getAttribute(":nickname", $nickname);
+            $conn->getAttribute(":pic", $pic);
+            $conn->getAttribute(":email", $email);
+            $conn->getAttribute(":born", $born);
+            if($conn->execute()){
+                array_push($profile, $nickname);
+                array_push($profile, $pic);
+                array_push($profile, $email);
+                array_push($profile, $born);
+                return $profile;
+            }
+            return NULL;
         }
         
-        public function delAccount($user, $password){}
+        public function delAccount($user, $password){
+
+        }
 
         public function updateAccount($user, $password){}
     }

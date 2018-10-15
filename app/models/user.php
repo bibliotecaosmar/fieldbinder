@@ -7,6 +7,7 @@
     class User extends Database
     {
         protected $nickname;
+        protected $pic;
         protected $email;
         protected $born;
 

@@ -8,7 +8,7 @@
     {
         private $db;
         ///UserDB interface
-        public function databaseConnection(){
+        protected function databaseConnection(){
             try{
                 $this->db = new PDO("mysql: host = localhost; dbname = fildbinder", "Main" , "");
                 return $this->db;
