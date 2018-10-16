@@ -4,14 +4,14 @@
     # ==Getter of Model== #
     #=====================#
 
-    class ModelController implements GetModel, LoadModel
+    class ModelController implements GetModel
     {
         private $view;
         private $votation;
         private $infoSpiece;
         private $infoProfile;
 
-        public function getModel($model){
+        public function getModel($view, $model){
             switch($view){
                 case 'editUsers':
                     return $model->manageAccounts($user, $password);
@@ -24,10 +24,5 @@
                 default:
                     return NULL;
             }
-        }
-        public function loadModel($model){
-           foreach($model as $models){
-
-           }
         }
     }

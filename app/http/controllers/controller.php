@@ -11,25 +11,18 @@
         private $action;
         private $model;
 
-        public function __construct(LoadView $view, GetModel $model, $request, HandleAction $handler, $exception){
+        public function __construct(LoadView $view, GetModel $model, $request, HandleAction $action, $exception){
             $this->user = $_COOKIE['user'] ?? 'undefined';
             $this->view = $_POST['view'] ?? 'index';
-
-            /*tira a responsabilidade do Main Controller */
+            $this->action = $action->getAction();
+            $this->model = $request->checkAcessLevelModel(/*Interface*/);
             
             //Load page for user
             require_once ROOT . VIEW . HEAD;
-            $view->loadAccount($this-user);
-            if($request->checkAcessLevelView($this->user, $this->view)){
-                $view->loadView($this->view);
-            }
-            $model->loadModel($model->getModel($request->checkAcessLevelModel(), $this->view));
-            if(isset($_POST['action'])){
-                $this->action = $_POST['action'];
-                if($request->checkLevelAcessAction($this->user, $this->action)){
-                    $this->action = $handler->handleAction($this->user, $this->action);
-                }
-            }
+            $view->loadAccount($this-user, $exception);
+            $view->loadView($this->view, $request->checkAcessLevelView($this->user, $this->view), $exception);
+            $view->loadModel($model->getModel($this->view, $this->model, $exception));
+            $view->loadAction($action->handleAction($this->user, $this->action, $request->checkLevelAcessAction($this->user, $this->action)), $exception);
             require ROOT . VIEW . FOOT;
         }
     }

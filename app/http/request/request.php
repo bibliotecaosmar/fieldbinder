@@ -53,7 +53,7 @@
             }
         }
         //check acess level of model
-        public function checkAcessLevelModel(){
+        public function checkAcessLevelModel($user){
             switch($user){
                 case 'adm':
                     $user = new Adm;
