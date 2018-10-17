@@ -4,8 +4,14 @@
     #  ==Adm==  #
     #===========#
     
-    final class Adm extends Adult
+    class Adm extends Database implements User
     {
+        private $nickname;
+        private $pic;
+        private $email;
+        private $born;
+        private $name;
+        
         public function showProfile(){}
         
         public function showValidateData(){}

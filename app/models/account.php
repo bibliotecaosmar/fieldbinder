@@ -26,11 +26,8 @@
         
         public function showAccount($user){
             $conn = self::databaseConnection();
-            $conn->prepare("SELECT nickname, pic, email, born FROM user WHERE :nickname = $user INTO (:nickname, :pic, :email, :born)");
-            $conn->getAttribute(":nickname", $nickname);
-            $conn->getAttribute(":pic", $pic);
-            $conn->getAttribute(":email", $email);
-            $conn->getAttribute(":born", $born);
+            $conn->prepare("SELECT nickname FROM user WHERE :nickname)");
+            $profile = $conn->fetch(":nickname", $nickname);
             if($conn->execute()){
                 array_push($profile, $nickname);
                 array_push($profile, $pic);
