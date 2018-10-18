@@ -7,7 +7,7 @@
     class ActionController implements HandleAction
     {
         public function getAction(){
-            return $_POST['action'];
+            return $_POST['action'] ?? '';
         }
         public function handleAction($user, $action = 'not exist', $acess){
             //Check level of acess in action

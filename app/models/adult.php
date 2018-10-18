@@ -15,5 +15,9 @@
         public function showProfile(){}
         
         public function showValidateData(){}
+        
+        public function submitData(){}
+        
+        public function reportData(){}
     
     }

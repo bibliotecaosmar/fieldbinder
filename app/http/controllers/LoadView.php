@@ -7,7 +7,7 @@
     interface LoadView
     {
         public function loadAccount($user);
-        public function loadView($view);
-        public function loadModel($model);
-        public function loadAction($action);
+        public function loadView($view, $acess, $exception);
+        public function loadModel($model, $exception);
+        public function loadAction($action, $exception);
     }

@@ -8,14 +8,16 @@
     {
         //interface that load account elements
         public function loadAccount($user){
-            if($user = 'undefined'){
-                require_once ROOT . VIEW . SIGN_BUTTON;
-            }else{
-                echo $user;
+            if($user = ''){
+                echo "<input type=\"submit\" name=\"signin\" value=\"signin\" >";
+                echo "<h4>or</h4>";
+                echo "<input type=\"submit\" name=\"signup\" value=\"signup\" >";
+
             }
+            echo $user;
         }
         //interface that load view elements
-        public function loadView($view, $acess){
+        public function loadView($view, $acess, $exception){
             //load view
             $view = ROOT . VIEW . PAGE . $view . '.php';
             if(file_exists($view)||$acess){
