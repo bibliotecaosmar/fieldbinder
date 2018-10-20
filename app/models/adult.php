@@ -14,10 +14,10 @@
 
         public function showProfile(){}
         
-        public function showValidateData(){}
+        public function showVotation(){}
         
         public function submitData(){}
         
-        public function reportData(){}
+        public function reportPicture(){}
     
     }

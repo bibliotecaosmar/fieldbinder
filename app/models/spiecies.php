@@ -14,11 +14,11 @@
         private $status;
         private $author;
 
-        public function getSpiece($spiece){
+        public function showSpiece($spiece){
     
         }
         //Interface CatalogSpieces
-        public function showCatalog($kingdom, $view){
+        public function showCatalog($view){
             //return array with model
         }
 

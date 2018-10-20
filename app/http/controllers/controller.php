@@ -14,15 +14,19 @@
         public function __construct(LoadView $view, GetModel $model, $request, HandleAction $action, $exception){
             $this->user = $_COOKIE['user'] ?? 'undefined';
             $this->view = $_POST['view'] ?? 'index';
-            $this->action = $action->getAction();
-            $this->model = $request->checkAcessLevelModel(/*Interface*/);
+            $this->action = $_POST['action'] ?? '';
+
+            //check level acess and execute action in first
+            if($request->checkAcessLevelAction($this->user, $this->action)){
+                $this->action = $action->handleAction($this->user, $this->action);
+            }
             
             //Load page for user
             require_once ROOT . VIEW . HEAD;
-            $view->loadAccount($this-user, $exception);
+            $view->loadAccount($this->user, $exception);
             $view->loadView($this->view, $request->checkAcessLevelView($this->user, $this->view), $exception);
-            $view->loadModel($model->getModel($this->view, $this->model, $exception));
-            $view->loadAction($action->handleAction($this->user, $this->action, $request->checkLevelAcessAction($this->user, $this->action)), $exception);
+            $view->loadModel($model->getModel($this->view, $request->checkAcessLevelModel($request->checkUser()), $exception));
+            $view->loadAction($this->action, $exception);
             require ROOT . VIEW . FOOT;
         }
     }

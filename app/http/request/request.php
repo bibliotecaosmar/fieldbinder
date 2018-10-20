@@ -6,6 +6,13 @@
 
     class Request implements AcessLevel
     {
+        //check usertype
+        public function checkUser(){
+            if(isset($_POST['code'])){
+                //
+            }
+            return 'undefined';
+        }
         //Check acess level of view
         public function checkAcessLevelView($user, $view){
             //check if exist permission than from user as from view

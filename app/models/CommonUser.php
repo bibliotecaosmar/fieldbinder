@@ -11,11 +11,9 @@
         protected $email;
         protected $born;
 
-        public function showProfile($nickname){
-            
-        }
+        public function showProfile($nickname){}
         
-        public function showValidateData(){}
+        public function showVotation(){}
 
         public function submitData(){}
         

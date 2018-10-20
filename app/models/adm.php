@@ -14,7 +14,7 @@
         
         public function showProfile(){}
         
-        public function showValidateData(){}
+        public function showVotation(){}
     
         public function manageAccounts(){}
     }

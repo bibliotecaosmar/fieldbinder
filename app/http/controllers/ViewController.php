@@ -17,19 +17,19 @@
             echo $user;
         }
         //interface that load view elements
-        public function loadView($view, $acess, $exception){
+        public function loadView($view, $exception){
             //load view
             $view = ROOT . VIEW . PAGE . $view . '.php';
-            if(file_exists($view)||$acess){
+            if(file_exists($view)){
                 require_once $view;
+            }else{
+                $exception->showMessage('Not found');
             }
         }
         //interface that load model elements
-        public function loadModel($model, $acess){
-            if($acess){
-                foreach($model as $models){
-     
-                }
+        public function loadModel($model, $exception){
+            foreach($model as $models){
+
             }   
         }
         //interface that load action elements

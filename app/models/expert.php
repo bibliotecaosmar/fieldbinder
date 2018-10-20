@@ -15,7 +15,9 @@
         
         public function showProfile(){}
         
-        public function showValidateData(){}
+        public function showVotation(){}
 
-        public function fastInclude(){}
+        public function submitData(){}
+
+        public function reportData(){}
     }
