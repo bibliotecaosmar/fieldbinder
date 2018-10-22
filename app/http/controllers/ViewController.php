@@ -27,13 +27,21 @@
             }
         }
         //interface that load model elements
-        public function loadModel($model, $exception){
-            foreach($model as $models){
-
-            }   
+        public function loadModel($model, $i = 0, $j, $exception){
+            
+            if(isset($model[$i])){
+                $models = array_swift($model[$i]);
+                echo "<h5 id=$models>";                
+                foreach($model[$i] as $models){
+                    echo "<p>$models</p><br>";
+                }
+                echo "</h5><br>";
+                self::loadModel($model[$i+1]);
+            }
         }
         //interface that load action elements
         public function loadAction($action, $exception){
-
+            echo "<h5 id=\"" . array_swift($action) . "\">" . array_swift($action) . "\</h5><br>";
+            echo "<p>" . array_swift($action) . "</p><br>";
         }
     }

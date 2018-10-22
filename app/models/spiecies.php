@@ -15,7 +15,13 @@
         private $author;
 
         public function showSpiece($spiece){
-    
+            $conn = self::databaseConnection();
+            $conn->prepare("SELECT spiece FROM spiece WHERE :spiece");
+            $spiece = $conn->fetch(":spiece", $spiece);
+            if($conn->execute()){
+                return $spiece;
+            }
+            return FALSE;
         }
         //Interface CatalogSpieces
         public function showCatalog($view){

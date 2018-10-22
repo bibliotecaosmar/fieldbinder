@@ -15,9 +15,7 @@
                     try{
                         $login = new Account();
                         $login->validateUser($_POST['login'], $_POST['password']);
-                        $redirect = new Controller();
-                        $redirect->directIndex();
-                        die();
+                        header('index.php');
                     }catch(PDOException $e){
 
                     }
