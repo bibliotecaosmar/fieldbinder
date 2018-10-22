@@ -27,8 +27,7 @@
             }
         }
         //interface that load model elements
-        public function loadModel($model, $i = 0, $j, $exception){
-            
+        public function loadModel($model, $i = 0, $exception){
             if(isset($model[$i])){
                 $models = array_swift($model[$i]);
                 echo "<h5 id=$models>";                

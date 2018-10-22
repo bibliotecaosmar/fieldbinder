@@ -1,2 +1,10 @@
-<h3> Título </h3>
-<p> Esse é um index apenas para tentar exemplificar um texto longo para posterior mente ser utilizado etc etc etc...</p>
+<!--Content Itens Menu-->
+                            <li id="tabOn"><?php $index ?></li>
+                            <li><?php $plant ?></li>
+                            <li><?php $animal ?></li>
+                            <li><?php $insect ?></li>
+                            <li><?php $mushroom ?></li>
+                        </ul>
+                        <div>
+                            <!--Sidebar Dropdown Menu-->
+                            <h2></h2>

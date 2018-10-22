@@ -18,12 +18,4 @@
                             <p>Logo</p>
                         </div>
                         <ul>
-                            <!--Content Itens Menu-->
-                            <li>Plant</li>
-                            <li>Animal</li>
-                            <li>Insect</li>
-                            <li>Mushroom</li>
-                        </ul>
-                        <div>
-                            <!--Sidebar Dropdown Menu-->
-                            <h2>
+                            

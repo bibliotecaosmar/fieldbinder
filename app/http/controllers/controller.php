@@ -10,8 +10,9 @@
         private $view;
         private $action;
         private $model;
-
+        
         public function __construct(LoadView $view, GetModel $model, $request, HandleAction $action, $exception){
+            $lang = $_POST['language'] ?? 'pt-br';
             $this->user = $_COOKIE['user'] ?? 'undefined';
             $this->view = $_POST['view'] ?? 'index';
             $this->action = $_POST['action'] ?? '';
@@ -22,6 +23,7 @@
             }
             
             //Load page for user
+            require_once ROOT . VIEW .  $lang . '.php';
             require_once ROOT . VIEW . HEAD;
             $view->loadAccount($this->user, $exception);
             $view->loadView($this->view, $request->checkAcessLevelView($this->user, $this->view), $exception);
