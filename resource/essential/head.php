@@ -13,9 +13,9 @@
             <header>
                 <nav>
                     <div>
-                        <div>
+                        <div id="logo"> 
                             <!--Logo-->
                             <p>Logo</p>
                         </div>
-                        <ul>
+                        <ul id="tabs">
                             

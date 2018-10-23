@@ -12,8 +12,10 @@
                         <!--Screen Login-->
                         <div>
                             <!--username and password field-->
-                            <form action="">
-                                <input type="text" placeholder="user">
-                                <input type="text" placeholder="password">
+                            <form name="sign">
+                                <label for="user">User:</label>
+                                <input type="text" name="user" placeholder="user">
+                                <label for="password"></label>
+                                <input type="text" name="password" placeholder="password">
                             </form>
                         </div>

@@ -25,10 +25,10 @@
             //Load page for user
             require_once ROOT . VIEW .  $lang . '.php';
             require_once ROOT . VIEW . HEAD;
-            $view->loadAccount($this->user, $exception);
-            $view->loadView($this->view, $request->checkAcessLevelView($this->user, $this->view), $exception);
-            $view->loadModel($model->getModel($this->view, $request->checkAcessLevelModel($request->checkUser()), $exception));
-            $view->loadAction($this->action, $exception);
+            $view->loadAccount($this->user);
+            $view->loadView($this->view, $request->checkAcessLevelView($this->user, $this->view));
+            $view->loadModel($model->getModel($this->view, $request->checkAcessLevelModel($request->checkUser())));
+            $view->loadAction($this->action);
             require ROOT . VIEW . FOOT;
         }
     }

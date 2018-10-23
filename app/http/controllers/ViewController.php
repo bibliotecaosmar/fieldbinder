@@ -17,7 +17,7 @@
             echo $user;
         }
         //interface that load view elements
-        public function loadView($view, $exception){
+        public function loadView($view){
             //load view
             $view = ROOT . VIEW . PAGE . $view . '.php';
             if(file_exists($view)){
@@ -27,7 +27,7 @@
             }
         }
         //interface that load model elements
-        public function loadModel($model, $i = 0, $exception){
+        public function loadModel($model, $i = 0){
             if(isset($model[$i])){
                 $models = array_swift($model[$i]);
                 echo "<h5 id=$models>";                
@@ -39,7 +39,7 @@
             }
         }
         //interface that load action elements
-        public function loadAction($action, $exception){
+        public function loadAction($action){
             echo "<h5 id=\"" . array_swift($action) . "\">" . array_swift($action) . "\</h5><br>";
             echo "<p>" . array_swift($action) . "</p><br>";
         }
