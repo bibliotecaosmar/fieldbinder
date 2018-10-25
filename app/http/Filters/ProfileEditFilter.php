@@ -4,7 +4,7 @@
     # ==Validation for Profile Edit== #
     #=================================#
 
-    interface ValidateProfileEdit
+    interface ProfileEditFilter
     {
-        public function validateEditInput($edition);
+        public function filteEditInput($edition);
     }

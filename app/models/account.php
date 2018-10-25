@@ -36,13 +36,9 @@
         }
         
         public function showAccount($user){
-            $conn = self::databaseConnection();
-            $conn->prepare("SELECT nickname FROM user WHERE :nickname)");
-            $profile = $conn->fetch(":nickname", $user);
-            if($conn->execute()){
-                return $profile;
-            }
-            return NULL;
+            //filters or not
+            $profile = self::selectRow('user', 'nickname', $user);
+            return $profile;
         }
         
         public function delAccount($user, $password){

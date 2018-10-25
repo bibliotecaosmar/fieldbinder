@@ -10,19 +10,25 @@
             //Check level of acess in action
             switch($action){
                 case 'register':
-                    break;
-                case 'login':
-                    try{
-                        $login = new Account();
-                        $login->validateUser($_POST['login'], $_POST['password']);
-                        header('index.php');
-                    }catch(PDOException $e){
-
+                    $register = new Account();
+                    $filter = new UserInput();
+                    if(!$filter->filteRegister($_POST['email'], $_POST['password'], $_POST['nickname'], $_POST['born'])){
+                        return $filter->error;
                     }
-                    break;
+                    return $register->registeAccount();
+                case 'login':
+                    $login = new Account();
+                    $filter = new UserInput();
+                    if(!$login->filteLogin($_POST['login'], $_POST['password'])){
+                        return $filter->error;
+                    }
+                    //set view and others values
+                    header('index.php');
                 case 'logout':
+                    setcookie('code', NULL);
                     setcookie('user', NULL);
-                    break;
+                    //set view and others values
+                    header('index.php');
                 case 'vote':
                     break;
                 case 'reportPicture':

@@ -4,7 +4,7 @@
     # ==Validation for Login== #
     #==========================#
 
-    interface ValidateLogin
+    interface LoginFilter
     {
-        public function validateLoginInput($email, $password);
+        public function filteLoginInput($email, $password);
     }

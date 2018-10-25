@@ -4,7 +4,7 @@
     # ==Validate Data== #
     #===================#
 
-    interface ValidateData
+    interface DataFilter
     {
-        public function validateDataForm($form);
+        public function filteDataForm($form);
     }

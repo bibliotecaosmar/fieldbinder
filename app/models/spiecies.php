@@ -15,13 +15,9 @@
         private $author;
 
         public function showSpiece($spiece){
-            $conn = self::databaseConnection();
-            $conn->prepare("SELECT spiece FROM spiece WHERE :spiece");
-            $spiece = $conn->fetch(":spiece", $spiece);
-            if($conn->execute()){
-                return $spiece;
-            }
-            return FALSE;
+            //filter or not
+            $dataSpiece = self::selectRow('spiece', 'commonName', $spiece);
+            return $profile;
         }
         //Interface CatalogSpieces
         public function showCatalog($view){

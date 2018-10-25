@@ -4,8 +4,8 @@
     # ==Filter of Votes== #
     #=====================#
 
-    interface ValidateVote
+    interface VoteFilter
     {
-        public function validateVote($user);
-        public function validadePictures($data);
+        public function filteVote($user);
+        public function filtePictures($data);
     }
