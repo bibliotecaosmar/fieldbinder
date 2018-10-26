@@ -23,7 +23,7 @@
             }
             
             //Load page for user
-            require_once ROOT . VIEW .  $lang . '.php';
+            require_once ROOT . VIEW . LANG . $lang . '.php';
             require_once ROOT . VIEW . HEAD;
             $view->loadAccount($this->user);
             $view->loadView($this->view, $request->checkAcessLevelView($this->user, $this->view));

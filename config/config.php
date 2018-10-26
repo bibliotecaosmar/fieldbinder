@@ -20,6 +20,14 @@
     $_COOKIE['user']
     $_COOKIE['code']
 
+    #--UPDATE_ACCOUNT--#
+    $_POST['newNickname']
+    $_POST['newEmail']
+    $_POST['newPassword']
+    $_POST['newBorn']
+    $_POST['newName']
+    $_POST['newDiploma']
+
     +---------------+
     |    actions    |
     +---------------+
@@ -40,6 +48,7 @@
     //VIEW
     define('VIEW' , 'resource/');
     define('PAGE' , 'views/');
+    define('LANG', 'lang/');
     //ESSENTIAL ELEMENTS
     define('HEAD' , 'essential/head.php');
     define('FOOT' , 'essential/foot.php');

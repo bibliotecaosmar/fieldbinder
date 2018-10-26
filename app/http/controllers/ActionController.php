@@ -12,10 +12,10 @@
                 case 'register':
                     $register = new Account();
                     $filter = new UserInput();
-                    if(!$filter->filteRegister($_POST['email'], $_POST['password'], $_POST['nickname'], $_POST['born'])){
+                    if(!$filter->filteRegister($_POST['newNickname'], $_POST['newEmail'], $_POST['newPassword'], $_POST['newBorn'], $_POST['newName'], $_POST['newDiploma'])){
                         return $filter->error;
                     }
-                    return $register->registeAccount();
+                    return $register->registeAccount($_POST['newNickname'], $_POST['newEmail'], $_POST['newPassword'], $_POST['newBorn'], $_POST['newName'], $_POST['newDiploma']);
                 case 'login':
                     $login = new Account();
                     $filter = new UserInput();
@@ -30,15 +30,27 @@
                     //set view and others values
                     header('index.php');
                 case 'vote':
-                    break;
+                    $spiece = new Spieces;
+                    $spiece->setVote($spiece->validateVote($_POST['spiece'], $_POST['option']));
+                    return TRUE;
                 case 'reportPicture':
-                    break;
+                    //NEW CLASS ??
                 case 'submitData':
-                    break;
+                    //$user = new 
+                    $spiece = new Spieces;
+                    //$spiece->
                 case 'updateProfile':
-                    break;
+                    $update = new Account();
+                    $request = new Request();
+                    $filter = new UserInput();
+                    if(!$filter->filteRegister($_POST['newNickname'], $_POST['newEmail'], $_POST['newPassword'], $_POST['newBorn'], $_POST['newName'], $_POST['newDiploma'])){
+                        return $filter->error;
+                    } 
+                    return $update->updateAccount($request->checkUser(), $_POST['password'], $_POST['newEmail'], $_POST['newPassword'], $_POST['newName'], $_POST['newDiploma']);
                 case 'deleteAccount':
-                    break;
+                    $delete = new Account();
+                    $request = new Request();
+                    return $delete->deleteAccount($request->checkUser(), $_POST['password']);
                 case 'not exist';
                     return NULL;
                 default:
