@@ -13,13 +13,13 @@
     /*
     **INDEX**
     */
-    $index = '';
+    $index = 'index';
 
     /*
     **GUIDE**
     */
-    $guide = '';
+    $guide = 'guide';
     /*
     **OURPROPOSAL**
     */
-    $ourproposal = '';
+    $ourproposal = 'our proposal';

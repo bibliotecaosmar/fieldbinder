@@ -54,4 +54,5 @@
     define('FOOT' , 'essential/foot.php');
     //SYSTEM VARIABLE
     define('VIEW_LIST' , array('index' , 'guide' , 'signin' , 'signup' , 'plant' , 'animal' , 'insect' , 'mushroom' , 'ourproposal'));
+
     

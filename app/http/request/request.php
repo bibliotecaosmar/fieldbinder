@@ -18,7 +18,7 @@
             //check if exist permission than from user as from view
             switch($view){
                 case 'editUsers':
-                    $account = new Account;
+                    $user = $this->checkUser();
                     if($user = 'adm'){
                         return TRUE;
                     }
@@ -42,7 +42,7 @@
             //check if exist action option and acess level
             switch($action){
                 case 'updateProfile'||'deleteProfile':
-                    $user = $account->checkUser($user);
+                    $user = $this->checkUser();
                     if($user = 'adm'){
                         //check user and password in an interface of the Account Class
                     }

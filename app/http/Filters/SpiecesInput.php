@@ -4,7 +4,9 @@
     # ==Form Inputs to Spieces== #
     #============================#
 
-    class SpiecesInput implements ValidateData, ValidateVotel
+    class SpiecesInput implements DataFilter, VoteFilter
     {
-        
+        public function filteDataForm($form){}
+        public function filteVote($user){}
+        public function filtePictures($data){}
     }
