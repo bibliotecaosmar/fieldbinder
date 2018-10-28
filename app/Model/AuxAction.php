@@ -10,7 +10,7 @@
         private $class;
         private $action;
 
-        public function __construct($action){
+        public function __construct($action = NULL){
             //set action for after use
             $this->action = $action;
             //set class action responsable
