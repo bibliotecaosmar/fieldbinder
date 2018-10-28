@@ -5,7 +5,7 @@
     #=========================#
 
     //aux action execute
-    class AuxActionModel
+    class AuxAction
     {
         private $class;
         private $action;
@@ -18,7 +18,7 @@
                 $class = new Account;
             }
             if($this->action = 'vote'||'reportPic'||'submitDate'){
-                $class = new Spiece;
+                $class = new Spiecies;
             }
         }
     }

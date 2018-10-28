@@ -20,7 +20,7 @@
             return $profile;
         }
         //Interface CatalogSpieces
-        public function showCatalog($view){
+        public function showCatalog($kingdom, $view){
             //return array with model
         }
 
