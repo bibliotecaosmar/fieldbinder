@@ -12,5 +12,12 @@
     $handler = new App\Http\Controllers\ActionController();
     $request = new App\Http\Request\Request();
     $exception = new App\Exceptions\Exception();
-    
-    new App\Http\Controllers\Controller($view, $model, $request, $handler, $exception);
+    $auxAction = new App\Model\AuxAction($_POST['action']);
+    $auxModel = new App\Model\AuxModel();
+
+    new App\Http\Controllers\Controller($auxAction, 
+                                        $auxModel->setModelUser($request->checkUser()), 
+                                        $view, 
+                                        $request, 
+                                        $handler, 
+                                        $exception);

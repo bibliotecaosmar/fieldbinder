@@ -7,5 +7,4 @@
         public function checkUser();
         public function checkAcessLevelView($user, $view);
         public function checkAcessLevelAction($user, $action);
-        public function checkAcessLevelModel($user);
     }

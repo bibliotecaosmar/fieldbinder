@@ -8,25 +8,30 @@
     {
         private $user;
         private $view;
-        private $action;
         private $model;
         
-        public function __construct(LoadView $view, GetModel $model, $request, HandleAction $action, $exception){
+        public function __construct($auxAction, 
+                                    $auxModel, 
+                                    LoadView $view, 
+                                    GetModel $model, 
+                                    $request, 
+                                    HandleAction $action, 
+                                    $exception){
+                                        
             $this->user = $_COOKIE['user'] ?? 'undefined';
             $this->view = $_POST['view'] ?? 'index';
-            $this->action = $_POST['action'] ?? '';
 
             //check level acess and execute action in first
-            if($request->checkAcessLevelAction($this->user, $this->action)){
-                $this->action = $action->handleAction($this->user, $this->action);
+            if($request->checkAcessLevelAction($this->user, $auxAction->action)){
+                $this->action = $action->handleAction($this->user, $auxAction->class);
             }
             
             //Load page for user
             require_once ROOT . VIEW . HEAD;
             $view->loadAccount($this->user);
             $view->loadView($this->view, $request->checkAcessLevelView($this->user, $this->view));
-            $view->loadModel($model->getModel($this->view, $request->checkAcessLevelModel($request->checkUser())));
-            $view->loadAction($this->action);
+            $view->loadModel($model->getModel($this->view, $auxModel));
+            $view->loadAction($auxAction->action);
             require ROOT . VIEW . FOOT;
         }
     }
