@@ -7,7 +7,7 @@
     class ActionController
     {
         public function handleAction($user, $action = NULL, $class){
-            switch($this->action){
+            switch($action){
                 case 'register':
                     return $class->registeAccount($_POST['newNickname'], $_POST['newEmail'], $_POST['newPassword'], $_POST['newBorn'], $_POST['newName'], $_POST['newDiploma']);
                 case 'login':

@@ -7,6 +7,7 @@
     abstract class Database
     {
         private $db;
+        
         ///UserDB interface
         protected function databaseConnection(){
             try{
@@ -16,24 +17,59 @@
                 return FALSE;
             }
         }
-
+        
+        //CHECK VALUES
+        protected function checkValue($database, $value, $where){
+            $conn = $this->databaseConnection();
+            $conn->prepare("SELECT $value FROM $database WHERE $where");
+            if($conn->execute()){
+                return TRUE;
+            }
+            return FALSE;
+        }
+        
+        //SELECT SPECIFICY VALUES
+        protected function selectValues($database, $value, $where, $values){
+            $conn = $this->databaseConnection();
+            $conn->prepare("SELECT $value FROM $database WHERE ?");
+            $conn->bindValue($where);
+            if($conn->execute()){
+                return $result = $conn->fetch(PDO::FETCH_ASSOC);
+            }
+            return FALSE;
+        }
+        
+        //SELECT ALL VALUES OF ONE ROW
         protected function selectRow($database, $value, $where){
             $conn = $this->databaseConnection();
-            $conn->prepare("SELECT * FROM $database WHERE $value = :nickname");
-            $conn->bindValue(":nickname", $where);
+            $conn->prepare("SELECT $value FROM $database WHERE ?");
+            $conn->bindValue($where);
             if($conn->execute()){
-                $result = $conn->fetch(PDO::FETCH_ASSOC);
-                return $result;
+                return $result = $conn->fetch(PDO::FETCH_ASSOC);
+            }
+            return FALSE;
+        }
+        
+        //INSERT VALUES IN DATABASE
+        protected function insertValue($database, $values, $where){
+            $conn = $this->databaseConnection();
+            $conn->prepare("INSERT INTO $where VALUES $values");
+            if($conn->execute()){
+                return TRUE;
             }
             return FALSE;
         }
 
-        protected function selectValues($database, $value, $where, $values){
+        //UPDATE ANY VALUE IN DATABASE
+        protected function updateValue($database, $values, $where){}
+
+        //DELETE ANY VALUE OF DATABASE
+        protected function deleteValue($database, $value, $where){
             $conn = $this->databaseConnection();
-            $conn->prepare("SELECT $value FROM $database WHERE $value = ?");
-            $conn->bindValue($where);
+            $conn->prepare("SELECT $value FROM $database WHERE ?");
+            $conn->fetch($where);
             if($conn->execute()){
-                $result = $conn->fetch(PDO::FETCH_ASSOC);
+                return TRUE;
             }
             return FALSE;
         }
