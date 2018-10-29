@@ -17,7 +17,6 @@
             $where = [
                 'user', 'pwd', 'nickname', 'born', 'completeName', 'diploma'
             ];
-
             return self::insertValues('user', $values, $where);
         }
         public function validateAccount($user, $password){
@@ -30,12 +29,17 @@
         
         public function showAccount($user){
             //filters or not
-            $profile = self::selectRow('user', 'nickname', $user);
-            return $profile;
+            return self::selectRow('user', 'nickname', $user);
         }
 
-        public function updateAccount($user, $password){
-            
+        public function updateAccount($user, $password, $mod){
+            $values = ['email', 'pwd'];
+            array_push($wheres, $user);
+            array_push($wheres, $password);
+            if(self::checkValue('user', $values, $wheres)){
+                return updateValue('user', $mod, $user);
+            }
+            return 'not avoid';
         }
         
         public function delAccount($user, $password){
@@ -43,11 +47,10 @@
             if(!self::checkValue('user', $password, $user)){
                 return 'incorrect password';
             }
-            if(self::deleteValue($database, $user, $where)){
+            if(self::deleteValue($database, $user)){
                 return TRUE;
             }
             return FALSE;
-
         }
 
     }
