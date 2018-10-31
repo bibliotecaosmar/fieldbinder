@@ -39,8 +39,10 @@
             }
         }
         //interface that load action elements
-        public function loadAction($action){
-            echo "<h5 id=\"" . array_swift($action) . "\">" . array_swift($action) . "\</h5><br>";
-            echo "<p>" . array_swift($action) . "</p><br>";
+        public function loadAction($action = NULL){
+            if(is_array($action)){
+                echo "<h5 id=\"" . array_key_first($action) . "\">" . array_key_first($action) . "\</h5><br>";
+                echo "<p>" . array_key_first($action) . "</p><br>";
+            }
         }
     }

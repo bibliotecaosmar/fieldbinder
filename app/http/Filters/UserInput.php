@@ -1,5 +1,5 @@
 <?php
-    namespace Http\Filter;
+    namespace App\Http\Filter;
     #================================#
     # ==Class for Input from Forms== #
     #================================#

@@ -10,12 +10,12 @@
         private $view;
         private $model;
         
-        public function __construct($auxAction, 
-                                    $auxModel, 
-                                    LoadView $view, 
-                                    GetModel $model, 
-                                    $request, 
-                                    HandleAction $action, 
+        public function __construct($auxAction,
+                                    $auxModel,
+                                    LoadView $view,
+                                    $model,
+                                    $request,
+                                    $action,
                                     $exception){
                                         
             $this->user = $_COOKIE['user'] ?? 'undefined';

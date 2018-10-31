@@ -1,5 +1,5 @@
 <?php
-    namespace Model;
+    namespace App\Model;
     #==============#
     #== AuxModel ==#
     #==============#
@@ -18,7 +18,7 @@
                 case 'user':
                     return new User;
                 default:
-                    return NULL;
+                    return 'undefined';
             }
         }
     }

@@ -7,8 +7,8 @@
     //aux action execute
     class AuxAction
     {
-        private $class;
-        private $action;
+        public $class;
+        public $action;
 
         public function __construct($action = NULL){
             //set action for after use

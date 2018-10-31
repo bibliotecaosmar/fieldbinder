@@ -4,7 +4,7 @@
     # ==Spieces== #
     #=============#
     
-    class Spieces extends Database implements SpiecesCatalog
+    class Spiecies extends Database implements SpiecesCatalog
     {
         private $spiece;
         private $kingdom;

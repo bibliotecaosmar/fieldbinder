@@ -9,7 +9,7 @@
         //check usertype
         public function checkUser(){
             if(isset($_POST['code'])){
-                //
+                
             }
             return 'undefined';
         }

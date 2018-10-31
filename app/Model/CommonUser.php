@@ -12,13 +12,7 @@
         protected $born;
 
         public function showProfile($nickname){
-            $conn = self::databaseConnection();
-            $conn->prepare("SELECT (nickname, ) FROM user WHERE :nickname");
-            $profile = $conn->fetch(":nickname", $nickname);
-            if($conn->execute()){
-                return $profile;
-            }
-            return FALSE;
+
         }
         
         public function showVotation(){}

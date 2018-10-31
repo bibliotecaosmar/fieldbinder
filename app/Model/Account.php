@@ -6,25 +6,24 @@
     
     class Account extends Database
     {
-        private $user; //database connection
-        private $password;
+        public $errors;
 
         public function registeAccount($email, $password, $nickname, $born, $name, $diploma){
             //Validation of values here
-            $values = [
-                $user, $pwd, $nickname, $born, $completeName, $diploma
-            ];
-            $where = [
-                'user', 'pwd', 'nickname', 'born', 'completeName', 'diploma'
-            ];
+            $values = $user . ',' 
+                    . $pwd . ',' 
+                    . $nickname . ',' 
+                    . $born . ',' 
+                    . $completeName . ',' 
+                    . $diploma;
+            $where = 'user, pwd, nickname, born, completeName, diploma';
             return self::insertValues('user', $values, $where);
         }
         public function validateAccount($user, $password){
             //filters
-            $values = ['email', 'pwd'];
-            array_push($wheres, $user);
-            array_push($wheres, $password);
-            return self::checkValue('user', $values, $wheres);
+            $values = 'email, pwd';
+            $wheres = $user . ',' . $password;
+            return self::checkValue('user', $values, (string) $wheres);
         }
         
         public function showAccount($user){
@@ -33,9 +32,8 @@
         }
 
         public function updateAccount($user, $password, $mod){
-            $values = ['email', 'pwd'];
-            array_push($wheres, $user);
-            array_push($wheres, $password);
+            $values = 'email, pwd';
+            $wheres = $user . ',' . $password;
             if(self::checkValue('user', $values, $wheres)){
                 return updateValue('user', $mod, $user);
             }
@@ -52,5 +50,4 @@
             }
             return FALSE;
         }
-
     }
