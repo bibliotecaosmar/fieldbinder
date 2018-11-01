@@ -8,6 +8,9 @@
     {
         //interface that load account elements
         public function catchLanguage(){
+            if(isset($_POST['setLanguage'])){
+                setcookie('language', $_POST['setLanguage']);
+            }
             if(!isset($_COOKIE['language'])){
                 require_once ROOT . VIEW . HEAD;
                 require_once ROOT . VIEW . LANG . 'require_lang.php';

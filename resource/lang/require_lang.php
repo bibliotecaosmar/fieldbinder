@@ -1,5 +1,7 @@
 <h3>Choice</h3>
-    <input type="radio" name="language" value="english"><label for="english">English</label>
-    <input type="radio" name="language" value="portuguese"><label for="portuguese">Português</label>
-    <input type="radio" name="language" value="newly"><label for="newly">Newly</label>
-    <button name="button">confirm</button>
+    <form action="index.php" method="post">
+        <input type="radio" name="setLanguage" value="english" method="post"><label for="english">English</label>
+        <input type="radio" name="setLanguage" value="portuguese" method="post"><label for="portuguese">Português</label>
+        <input type="radio" name="setLanguage" value="newly" method="post"><label for="newly">Newly</label>
+        <input type="submit" value="confirm">
+    </form>
