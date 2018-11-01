@@ -12,12 +12,14 @@
         
         public function __construct($auxAction,
                                     $auxModel,
-                                    LoadView $view,
+                                    $view,
                                     $model,
                                     $request,
                                     $action,
                                     $exception){
-                                        
+            
+            $view->catchLanguage();
+
             $this->user = $_COOKIE['user'] ?? 'undefined';
             $this->view = $_POST['view'] ?? 'index';
 

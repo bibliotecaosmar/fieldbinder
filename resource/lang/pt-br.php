@@ -9,17 +9,3 @@
     $mushroom = 'congumelo';
     $guide = 'guia';
     $ourproposal = 'nossa proposta';
-
-    /*
-    **INDEX**
-    */
-    $index = 'catálogo';
-
-    /*
-    **GUIDE**
-    */
-    $guide = 'guia';
-    /*
-    **OURPROPOSAL**
-    */
-    $ourproposal = 'nossa proposta';

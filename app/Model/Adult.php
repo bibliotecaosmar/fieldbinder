@@ -11,8 +11,6 @@
         protected $email;
         protected $born;
         protected $name;
-
-        public function showProfile(){}
         
         public function showVotation(){}
         

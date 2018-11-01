@@ -10,10 +10,6 @@
         protected $pic;
         protected $email;
         protected $born;
-
-        public function showProfile($nickname){
-
-        }
         
         public function showVotation(){}
 

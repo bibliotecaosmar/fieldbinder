@@ -11,9 +11,7 @@
         private $email;
         private $born;
         private $name;
-        
-        public function showProfile(){}
-        
+                
         public function showVotation(){}
     
         public function manageAccounts(){}

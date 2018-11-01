@@ -19,6 +19,7 @@
     #--COOKIE--#
     $_COOKIE['user']
     $_COOKIE['code']
+    $_COOKIE['language']
 
     #--UPDATE_ACCOUNT--#
     $_POST['newNickname']

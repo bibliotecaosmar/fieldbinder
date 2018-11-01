@@ -13,8 +13,6 @@
         private $name;
         private $diploma;
         
-        public function showProfile(){}
-        
         public function showVotation(){}
 
         public function submitData(){}

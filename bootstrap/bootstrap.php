@@ -5,7 +5,6 @@
 
     require_once '../config/config.php';
     require_once '../vendor/autoload.php';
-    require_once '../config/lang.php';
 
     $view = new App\Http\Controllers\ViewController();
     $model = new App\Http\Controllers\ModelController();

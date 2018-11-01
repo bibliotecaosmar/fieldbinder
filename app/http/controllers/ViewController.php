@@ -4,9 +4,18 @@
     # ==View Controller== #
     #=====================#
 
-    class ViewController implements LoadView
+    class ViewController extends Language implements LoadView
     {
         //interface that load account elements
+        public function catchLanguage(){
+            if(!isset($_COOKIE['language'])){
+                require_once ROOT . VIEW . HEAD;
+                require_once ROOT . VIEW . LANG . 'require_lang.php';
+                die();
+            }
+            parent::setLanguage($_COOKIE['language']);
+        }
+
         public function loadAccount($user){
             if($user = ''){
                 echo "<input type=\"submit\" name=\"signin\" value=\"signin\" >";
