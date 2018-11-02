@@ -14,17 +14,27 @@
         protected $guide;
         protected $ourproposal;
 
-        protected function setLanguage($language){
-            $test = $language;
-            if($test = 'pt-br'||'en'){
-                require_once ROOT . VIEW . LANG . $language . '.php';
-                $this->index = $index;
-                $this->plant = $plant;
-                $this->animal = $animal;
-                $this->insect = $insect;
-                $this->mushroom = $mushroom;
-                $this->guide = $guide;
-                $this->ourproposal = $ourproposal;
+        private function setLanguage($language){
+            $this->index = $laguange->index;
+            $this->plant = $language->plant;
+            $this->animal = $language->animal;
+            $this->insect = $language->insect;
+            $this->mushroom = $language->mushroom;
+            $this->guide = $language->guide;
+            $this->ourproposal = $language->ourproposal;
+        }
+
+        protected function selectLanguage($language){
+            switch($language){
+                case 'pt-br':
+                    $language = new Portuguese;
+                    $this->setLanguage($language);
+                case 'en':
+                    $language = new English;
+                    $this->setLanguage($language);
+                default:
+                    $language = new Portuguese;
+                    $this->setLanguage($language);
             }
         }
     }
