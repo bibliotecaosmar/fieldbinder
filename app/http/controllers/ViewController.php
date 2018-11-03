@@ -4,19 +4,44 @@
     # ==View Controller== #
     #=====================#
 
-    class ViewController extends Language implements LoadView
+    class ViewController implements LoadView
     {
+        public $index;
+        public $plant;
+        public $animal;
+        public $insect;
+        public $mushroom;
+        public $guide;
+        public $ourproposal;
+
+        private function setLanguage($language){
+            $this->index = $laguange->index;
+            $this->plant = $language->plant;
+            $this->animal = $language->animal;
+            $this->insect = $language->insect;
+            $this->mushroom = $language->mushroom;
+            $this->guide = $language->guide;
+            $this->ourproposal = $language->ourproposal;
+        }
+        public function selectLanguage($language){
+            switch($language){
+                case 'pt-br':
+                    $language = new Portuguese;
+                    $this->setLanguage($language);
+                case 'en':
+                    $language = new English;
+                    $this->setLanguage($language);
+                default:
+                    $language = new English;
+                    $this->setLanguage($language);
+            }
+        }
+
         //interface that load account elements
         public function catchLanguage(){
-            if(isset($_POST['setLanguage'])){
-                setcookie('language', $_POST['setLanguage']);
-            }
-            if(!isset($_COOKIE['language'])){
-                require_once ROOT . VIEW . HEAD;
-                require_once ROOT . VIEW . LANG . 'require_lang.php';
-                die();
-            }
-            parent::setLanguage($_COOKIE['language']);
+            require_once ROOT . VIEW . HEAD;
+            require_once ROOT . VIEW . LANG . 'require_lang.php';
+            exit();
         }
 
         public function loadAccount($user){

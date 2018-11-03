@@ -1,9 +1,9 @@
 <!--Content Itens Menu-->
-                            <li><?php echo parent::$plant ?></li>
-                            <li><?php echo parent::$animal ?></li>
-                            <li><?php echo parent::$insect ?></li>
-                            <li><?php echo parent::$mushroom ?></li>
-                            <li id="tabOn"><?php echo parent::$profile ?></li>
+                            <li><?php echo $this->plant ?></li>
+                            <li><?php echo $this->animal ?></li>
+                            <li><?php echo $this->insect ?></li>
+                            <li><?php echo $this->mushroom ?></li>
+                            <li id="tabOn"><?php echo $this->profile ?></li>
                         </ul>
                         <div>
                             <!--Sidebar Dropdown Menu-->
