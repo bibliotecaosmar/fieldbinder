@@ -15,7 +15,7 @@
                     <div>
                         <div id="logo"> 
                             <!--Logo-->
-                            <p>Logo</p>
+                            <p>fieldbinder</p>
                         </div>
                         <ul id="tabs">
                             

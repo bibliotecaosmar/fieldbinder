@@ -10,7 +10,7 @@
                             <!--Sidebar Dropdown Menu-->
                             <h2></h2>
                         <!--Signup Screen-->
-                        <form>
+                        <form method="post">
                             <label for="nickname"><?php echo $this->nickname ?></label>
                             <input type="text" name="nickname" placeholder=<?php echo $this->nickname ?>>
                             <label for="password"><?php echo $this->password ?></label>

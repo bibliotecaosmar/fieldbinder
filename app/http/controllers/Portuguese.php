@@ -13,4 +13,8 @@
         public $mushroom = 'congumelo';
         public $guide = 'guia';
         public $ourproposal = 'nossa proposta';
+
+        public $signin = 'entrar';
+        public $signup = 'registra-se';
+        public $or = 'ou';
     }

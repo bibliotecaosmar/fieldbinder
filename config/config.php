@@ -53,6 +53,10 @@
     //ESSENTIAL ELEMENTS
     define('HEAD' , 'essential/head.php');
     define('FOOT' , 'essential/foot.php');
+    define('SIGN_BUTTON' , 'elementies/signButton.php');
+    define('USER_WELCOME' , 'elementies/userWelcome.php');
+    define('MODEL' , 'elementies/modelTags.php');
+    define('ACTION' , 'elementies/actionTags.php');
     //SYSTEM VARIABLE
     define('VIEW_LIST' , array('index' , 'guide' , 'signin' , 'signup' , 'plant' , 'animal' , 'insect' , 'mushroom' , 'ourproposal'));
 

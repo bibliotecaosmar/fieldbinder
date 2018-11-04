@@ -13,4 +13,8 @@
         public $mushroom = 'mushroom';
         public $guide = 'guide';
         public $ourproposal = 'ourproposal';
+
+        public $signin = 'signin';
+        public $signup = 'signup';
+        public $or = 'or';
     }
