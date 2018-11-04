@@ -6,16 +6,16 @@
 
     class ViewController implements LoadView
     {
-        public $index;
-        public $plant;
-        public $animal;
-        public $insect;
-        public $mushroom;
-        public $guide;
-        public $ourproposal;
+        private $index;
+        private $plant;
+        private $animal;
+        private $insect;
+        private $mushroom;
+        private $guide;
+        private $ourproposal;
 
         private function setLanguage($language){
-            $this->index = $laguange->index;
+            $this->index = $language->index;
             $this->plant = $language->plant;
             $this->animal = $language->animal;
             $this->insect = $language->insect;
@@ -32,7 +32,7 @@
                     $language = new English;
                     $this->setLanguage($language);
                 default:
-                    $language = new English;
+                    $language = new Portuguese;
                     $this->setLanguage($language);
             }
         }
@@ -41,7 +41,7 @@
         public function catchLanguage(){
             require_once ROOT . VIEW . HEAD;
             require_once ROOT . VIEW . LANG . 'require_lang.php';
-            exit();
+            die();
         }
 
         public function loadAccount($user){

@@ -17,16 +17,15 @@
                                     $request,
                                     $action,
                                     $exception){
-            //if(isset($_POST['setLanguage'])){
-                //setcookie('language', $_POST['setLanguage']);
-            //}
-            //if(!isset($_COOKIE['language'])){
-            //    $view->catchLanguage();
-            //}
-            //if(isset($_COOKIE['language'])){
-                $language = 'pt-br'/*$_COOKIE['language']*/;
-                $view->selectLanguage($language);
-            //}
+            
+            if(!isset($_COOKIE['language'])){
+                if(!isset($_POST['setLanguage'])){
+                    $view->catchLanguage();
+                }
+                setcookie('language', $_POST['setLanguage']);
+                $language = $_POST['setLanguage'];
+            }
+            $view->selectLanguage($_COOKIE['language'] ?? $language);
 
             $this->user = $_COOKIE['user'] ?? 'undefined';
             $this->view = $_POST['view'] ?? 'index';
