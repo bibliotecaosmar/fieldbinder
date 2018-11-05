@@ -1,1 +1,1 @@
-<h4>Hi, <?php $user ?></h4>
+<h4>Hi, <?php echo $user ?></h4>

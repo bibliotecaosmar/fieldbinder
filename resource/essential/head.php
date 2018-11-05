@@ -12,10 +12,9 @@
         <body>
             <header>
                 <nav>
-                    <div>
-                        <div id="logo"> 
-                            <!--Logo-->
-                            <p>fieldbinder</p>
-                        </div>
-                        <ul id="tabs">
+                    <div id="logo"> 
+                        <!--Logo-->
+                        <p>fieldbinder</p>
+                    </div>
+                    <ul id="tabs">
                             

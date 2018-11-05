@@ -23,29 +23,29 @@
             //filters
             $values = 'email, pwd';
             $wheres = $user . ',' . $password;
-            return self::checkValue('user', $values, (string) $wheres);
+            return self::checkValues('user', $values, (string) $wheres);
         }
         
         public function showAccount($user){
             //filters or not
-            return self::selectRow('user', 'nickname', $user);
+            return self::selectValues('user', 'nickname', $user);
         }
 
         public function updateAccount($user, $password, $mod){
             $values = 'email, pwd';
             $wheres = $user . ',' . $password;
-            if(self::checkValue('user', $values, $wheres)){
-                return updateValue('user', $mod, $user);
+            if(self::checkValues('user', $values, $wheres)){
+                return updateValues('user', $mod, $user);
             }
             return 'not avoid';
         }
         
         public function delAccount($user, $password){
             //filters
-            if(!self::checkValue('user', $password, $user)){
+            if(!self::checkValues('user', $password, $user)){
                 return 'incorrect password';
             }
-            if(self::deleteValue($database, $user)){
+            if(self::deleteValues($database, $user)){
                 return TRUE;
             }
             return FALSE;

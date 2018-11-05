@@ -19,7 +19,7 @@
         }
         
         //CHECK VALUES
-        protected function checkValue($database, $value, $where){
+        protected function checkValues($database, $value, $where){
             $conn = $this->databaseConnection();
             $conn->prepare("SELECT $value FROM $database WHERE $where");
             if($conn->execute()){
@@ -28,20 +28,10 @@
             return FALSE;
         }
         
-        //SELECT SPECIFICY VALUES
-        protected function selectValues($database, $value, $where, $values){
+        //SELECT VALUES
+        protected function selectValues($database, $values, $where){
             $conn = $this->databaseConnection();
-            $conn->prepare("SELECT $value FROM $database WHERE $where");
-            if($conn->execute()){
-                return $result = $conn->fetch(PDO::FETCH_ASSOC);
-            }
-            return FALSE;
-        }
-        
-        //SELECT ALL VALUES OF ONE ROW
-        protected function selectRow($database, $value, $where){
-            $conn = $this->databaseConnection();
-            $conn->prepare("SELECT $value FROM $database WHERE $where");
+            $conn->prepare("SELECT $values FROM $database WHERE $where");
             if($conn->execute()){
                 return $result = $conn->fetch(PDO::FETCH_ASSOC);
             }
@@ -49,7 +39,7 @@
         }
         
         //INSERT VALUES IN DATABASE
-        protected function insertValue($database, $values, $where){
+        protected function insertValues($database, $values, $where){
             $conn = $this->databaseConnection();
             $conn->prepare("INSERT INTO $database($where) VALUES $values");
             if($conn->execute()){
@@ -58,8 +48,8 @@
             return FALSE;
         }
 
-        //UPDATE ANY VALUE IN DATABASE
-        protected function updateValue($database, $values, $where){
+        //UPDATE VALUES OF DATABASE
+        protected function updateValues($database, $values, $where){
             $conn = $this->databaseConnection();
             $conn->prepare("UPDATE INTO $database($where) VALUES $values");
             if($conn->execute()){
@@ -68,8 +58,8 @@
             return FALSE;
         }
 
-        //DELETE ANY VALUE OF DATABASE
-        protected function deleteValue($database, $where){
+        //DELETE VALUES OF DATABASE
+        protected function deleteValues($database, $where){
             $conn = $this->databaseConnection();
             $conn->prepare("SELECT FROM $database WHERE ?");
             $conn->fetch($where);

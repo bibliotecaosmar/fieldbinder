@@ -56,9 +56,9 @@
         public function loadAccount($user){
             if($user = 'undefined'){
                 require_once ROOT . VIEW . SIGN_BUTTON;
-            }else{
-                require_once ROOT . VIEW . USER_WELCOME;
+                return;
             }
+            require_once ROOT . VIEW . USER_WELCOME;
         }
         //interface that load view elements
         public function loadView($view){
@@ -71,7 +71,9 @@
         //interface that load model elements
         public function loadModel($model){
             //code
-            require_once ROOT . VIEW . MODEL;
+            foreach($model as $models){
+                require ROOT . VIEW . MODEL;
+            }
         }
         //interface that load action elements
         public function loadAction($action = NULL){
