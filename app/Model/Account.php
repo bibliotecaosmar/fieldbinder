@@ -25,11 +25,6 @@
             $wheres = $user . ',' . $password;
             return self::checkValues('user', $values, (string) $wheres);
         }
-        
-        public function showAccount($user){
-            //filters or not
-            return self::selectValues('user', 'nickname', $user);
-        }
 
         public function updateAccount($user, $password, $mod){
             $values = 'email, pwd';
@@ -40,7 +35,7 @@
             return 'not avoid';
         }
         
-        public function delAccount($user, $password){
+        public function deleteAccount($user, $password){
             //filters
             if(!self::checkValues('user', $password, $user)){
                 return 'incorrect password';

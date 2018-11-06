@@ -29,17 +29,20 @@
                     //set view and others values
                     $_POST['view'] = 'index';                    
                 case 'updateProfile': 
-                    return $update->updateAccount($request->checkUser(), $_POST['password'], $_POST['newEmail'], $_POST['newPassword'], $_POST['newName'], $_POST['newDiploma']);
+                    return $update->updateAccount($request->checkUser(), $_POST['password'], 
+                                                                         $_POST['newEmail'], 
+                                                                         $_POST['newPassword'], 
+                                                                         $_POST['newName'], 
+                                                                         $_POST['newDiploma']);
                 case 'deleteAccount':
-                    return $delete->deleteAccount($request->checkUser(), $_POST['password']);
+                    return $class->deleteAccount($request->checkUser(), $_POST['password']);
                 case 'vote':
-                    $spiece->setVote($spiece->validateVote($_POST['spiece'], $_POST['option']));
+                    $class->getVotation($_POST['spiece'], $_POST['option']);
                     return TRUE;
                 case 'reportPicture':
-                    //NEW CLASS ??
+                    $class->reportPic($_POST['provisoryIdPic']);
                 case 'submitData':
-                    //$user = new 
-                    //$spiece->
+                    $class->submitData($_POST['spiece']);
                 case NULL;
                     return NULL;
                 default:

@@ -4,21 +4,28 @@
     # ==Spieces== #
     #=============#
     
-    class Spiecies extends Database implements SpiecesCatalog
+    class Spiecies extends Database implements SpiecesCatalog, Votation
     {
-        private $spiece;
-        private $kingdom;
-        private $habitat;
-        private $commonName;
-        private $pic;
-        private $status;
-        private $author;
+        public $spiece;
+        public $kingdom;
+        public $habitat;
+        public $commonName;
+        public $pic;
+        public $status;
+        public $author;
+
+
 
         public function showSpiece($spiece){
             //filter or not
             $dataSpiece = self::selectRow('spiece', 'commonName', $spiece);
             return $profile;
         }
+        //interface
+        public function showVotation($spiece){
+            return ;
+        }
+
         //Interface CatalogSpieces
         public function showCatalog($kingdom, $view){
             //return array with model

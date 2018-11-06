@@ -4,7 +4,7 @@
     # ==Vonlunty Profissionals== #
     #============================#
     
-    final class Expert extends Adult
+    class Expert extends Database implements User
     {
         private $nickname;
         private $pic;
