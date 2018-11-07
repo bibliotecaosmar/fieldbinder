@@ -4,12 +4,12 @@
     # ==Common User== #
     #=================#
 
-    class CommonUser extends Database implements User
+    class User extends Database
     {
-        protected $nickname;
-        protected $pic;
-        protected $email;
-        protected $born;
+        public $nickname;
+        public $pic;
+        public $email;
+        public $born;
         
         public function showProfile($user){
             //filters or not
@@ -17,10 +17,16 @@
         }
 
         public function submitData($spiece){
-            if(isset($spiece[$x])){
-                $where = 0;
-                $values = 0;
+            $awaitData = ['spiece', 'kingdom', 'habitat', 'commonName', 'pic', 'status', 'author'];
+            foreach($awaitData as $data){
+                if($spiece[$data]){
+                    array_push($where, $data);
+                    array_push($values, $spiece);
+                }
             }
+            $where = implode($where, ',');
+            $values = implode($values. ',');
+            
             if(self::checkValues('spiecies', $spiece['name'], 'commonName')){
                 self::updateValues('spiecies', $values, $where);
                 return;

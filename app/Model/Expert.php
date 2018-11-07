@@ -4,7 +4,7 @@
     # ==Vonlunty Profissionals== #
     #============================#
     
-    class Expert extends Database implements User
+    class Expert extends Database
     {
         private $nickname;
         private $pic;
@@ -13,9 +13,9 @@
         private $name;
         private $diploma;
         
-        public function showVotation(){}
+        public function showProfile(){}
 
         public function submitData(){}
 
-        public function reportData(){}
+        public function reportPic(){}
     }

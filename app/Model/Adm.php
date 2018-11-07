@@ -4,7 +4,7 @@
     #  ==Adm==  #
     #===========#
     
-    class Adm extends Database implements User
+    class Adm extends Database
     {
         private $nickname;
         private $pic;
@@ -12,7 +12,7 @@
         private $born;
         private $name;
                 
-        public function showVotation(){}
-    
+        public function showProfile(){}
         public function manageAccounts(){}
+        public function manageSpiecies(){}
     }

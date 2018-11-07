@@ -14,33 +14,17 @@
         public $status;
         public $author;
 
-
-
         public function showSpiece($spiece){
             //filter or not
-            $dataSpiece = self::selectRow('spiece', 'commonName', $spiece);
-            return $profile;
+            return self::selectRow('spiece', 'commonName', $spiece);
         }
-        //interface
-        public function showVotation($spiece){
-            return ;
-        }
+        //Interface Votation
+        public function getVotation($spiece){}
+        //Interface Votation
+        public function showVotation($spiece){}
 
         //Interface CatalogSpieces
         public function showCatalog($kingdom, $view){
             //return array with model
         }
-
-        public function showData($usertype){
-            //show data depending of usertype
-        }
-
-        public function validadeData($datatype){
-            //switch the status of the spiece depending of the *Business Rule
-        }
-
-        public function registerData($datatype){
-            //register all and any data sent for user            
-        }
-
     }

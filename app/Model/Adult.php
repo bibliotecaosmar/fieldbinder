@@ -4,7 +4,7 @@
     # ==Adult Users== #
     #=================#
     
-    class Adult extends Database implements User
+    class Adult extends Database
     {
         protected $nickname;
         protected $pic;
