@@ -12,7 +12,9 @@
         private $born;
         private $name;
                 
-        public function showProfile(){}
+        public function showProfile(){
+            return self::selectValues('user', 'nickname', $user);
+        }
         public function manageAccounts(){}
         public function manageSpiecies(){}
     }

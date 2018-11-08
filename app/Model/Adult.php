@@ -12,7 +12,9 @@
         protected $born;
         protected $name;
         
-        public function showVotation(){}
+        public function showVotation(){
+            return self::selectValues('user', 'nickname', $user);
+        }
         
         public function submitData(){}
         

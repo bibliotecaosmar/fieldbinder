@@ -11,7 +11,6 @@
         public $habitat;
         public $commonName;
         public $pic;
-        public $status;
         public $author;
 
         public function showSpiece($spiece){
