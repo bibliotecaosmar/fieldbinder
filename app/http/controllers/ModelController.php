@@ -13,7 +13,7 @@
 
         public function getModel($view, $model){
             switch($view){
-                case 'editUsers':
+                case 'manageUsers':
                     return $model->manageAccounts($user, $password);
                 case 'profile':
                     return $model->showProfile($user);

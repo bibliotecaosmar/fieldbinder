@@ -17,7 +17,7 @@
         public function checkAcessLevelView($user, $view){
             //check if exist permission than from user as from view
             switch($view){
-                case 'editUsers':
+                case 'manageUsers':
                     $user = $this->checkUser();
                     if($user = 'adm'){
                         return TRUE;

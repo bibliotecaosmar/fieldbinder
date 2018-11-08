@@ -33,13 +33,13 @@
             if($request->checkAcessLevelAction($this->user, $auxAction->action)){
                 $this->action = $action->handleAction($this->user, $auxAction->class);
             }
-            
+
             //Load page for user
-            require_once ROOT . VIEW . HEAD;
+            $view->loadHead();
             $view->loadAccount($this->user);
             $view->loadView($this->view, $request->checkAcessLevelView($this->user, $this->view));
             $view->loadModel($model->getModel($this->view, $auxModel));
             $view->loadAction($auxAction->action);
-            require ROOT . VIEW . FOOT;
+            $view->loadFoot();
         }
     }

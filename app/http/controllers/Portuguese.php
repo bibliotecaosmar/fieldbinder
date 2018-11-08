@@ -17,4 +17,8 @@
         public $signin = 'entrar';
         public $signup = 'registra-se';
         public $or = 'ou';
+
+        public $creater = 'Criado por: ';
+
+        public $indexBody = 'Esse é um texto para teste da view de nosso produto etc etc etc....';
     }
