@@ -6,5 +6,5 @@
 
     interface Votation
     {
-        public function showVotation();
+        public function getVotation($spiece);
     }

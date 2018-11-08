@@ -18,31 +18,34 @@
         private $signup;
         private $or;
 
-        private function setLanguage($language){
-            $this->index = $language->index;
-            $this->plant = $language->plant;
-            $this->animal = $language->animal;
-            $this->insect = $language->insect;
-            $this->mushroom = $language->mushroom;
-            $this->guide = $language->guide;
-            $this->ourproposal = $language->ourproposal;
+        private function setLanguage($lang){
+            $this->index = $lang->index;
+            $this->plant = $lang->plant;
+            $this->animal = $lang->animal;
+            $this->insect = $lang->insect;
+            $this->mushroom = $lang->mushroom;
+            $this->guide = $lang->guide;
+            $this->ourproposal = $lang->ourproposal;
 
-            $this->signin = $language->signin;
-            $this->signup = $language->signup;
-            $this->or = $language->or;
+            $this->signin = $lang->signin;
+            $this->signup = $lang->signup;
+            $this->or = $lang->or;
         }
 
         public function selectLanguage($language){
             switch($language){
                 case 'pt-br':
-                    $language = new Portuguese;
-                    $this->setLanguage($language);
+                    $lang = new Portuguese;
+                    $this->setLanguage($lang);
+                    break;
                 case 'en':
-                    $language = new English;
-                    $this->setLanguage($language);
+                    $lang = new English;
+                    $this->setLanguage($lang);
+                    break;
                 default:
-                    $language = new Portuguese;
-                    $this->setLanguage($language);
+                    $lang = new Portuguese;
+                    $this->setLanguage($lang);
+                    break;
             }
         }
 

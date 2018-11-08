@@ -17,13 +17,13 @@
             //filter or not
             return self::selectRow('spiece', 'commonName', $spiece);
         }
+        //Interface CatalogSpieces
+        public function showCatalog($kingdom, $view){
+            //return array with model
+        }
         //Interface Votation
         public function getVotation($spiece){}
         //Interface Votation
         public function showVotation($spiece){}
 
-        //Interface CatalogSpieces
-        public function showCatalog($kingdom, $view){
-            //return array with model
-        }
     }

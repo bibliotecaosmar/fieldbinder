@@ -23,9 +23,8 @@
                     $view->catchLanguage();
                 }
                 setcookie('language', $_POST['setLanguage']);
-                $language = $_POST['setLanguage'];
             }
-            $view->selectLanguage($_COOKIE['language'] ?? $language);
+            $view->selectLanguage($_COOKIE['language'] ?? $_POST['setLanguage']);
 
             $this->user = $_COOKIE['user'] ?? 'undefined';
             $this->view = $_POST['view'] ?? 'index';
