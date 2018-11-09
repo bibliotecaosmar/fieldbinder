@@ -8,6 +8,7 @@
     {
         private $user;
         private $view;
+        private $action;
         private $model;
         
         public function __construct($auxAction,
@@ -39,7 +40,7 @@
             $view->loadAccount($this->user);
             $view->loadView($this->view, $request->checkAcessLevelView($this->user, $this->view));
             $view->loadModel($model->getModel($this->view, $auxModel));
-            $view->loadAction($auxAction->action);
+            $view->loadAction($this->action);
             $view->loadFoot();
         }
     }

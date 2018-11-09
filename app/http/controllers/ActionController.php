@@ -43,6 +43,9 @@
                     $class->reportPic($_POST['provisoryIdPic']);
                 case 'submitData':
                     $class->submitData($_POST['spiece']);
+                case 'manageAccount':
+                    //create assoc array bidimensional
+                    $class->manageAccounts($manage);
                 case NULL;
                     return NULL;
                 default:

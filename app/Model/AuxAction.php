@@ -14,7 +14,7 @@
             //set action for after use
             $this->action = $action;
             //set class action responsable
-            if($this->action = 'register'||'login'||'logout'||'updateProfile'||'deleteAccount'){
+            if($this->action = 'register'||'login'||'logout'||'updateProfile'||'deleteAccount'||'manageAccounts'){
                 $class = new Account;
             }
             if($this->action = 'vote'||'reportPic'||'submitDate'){
