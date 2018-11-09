@@ -6,6 +6,10 @@
 
     class Portuguese
     {
+        public $signin = 'entrar';
+        public $signup = 'registra-se';
+        public $or = 'ou'; 
+
         public $index = 'catalogo';
         public $plant = 'planta';
         public $animal = 'animal';
@@ -14,11 +18,14 @@
         public $guide = 'guia';
         public $ourproposal = 'nossa proposta';
 
-        public $signin = 'entrar';
-        public $signup = 'registra-se';
-        public $or = 'ou';
-
         public $creater = 'Criado por: ';
 
         public $indexBody = 'Esse é um texto para teste da view de nosso produto etc etc etc....';
+
+        public $nickname = 'apelido';
+        public $password = 'senha';
+        public $email = 'email';
+        public $born = 'data de nascimento';
+        public $name = 'nome';
+        public $diploma = 'diploma';
     }

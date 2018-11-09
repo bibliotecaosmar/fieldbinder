@@ -23,6 +23,10 @@
         private $indexBody;
 
         private function setLanguage($lang){
+            $this->signin = $lang->signin;
+            $this->signup = $lang->signup;
+            $this->or = $lang->or;
+
             $this->index = $lang->index;
             $this->plant = $lang->plant;
             $this->animal = $lang->animal;
@@ -31,14 +35,16 @@
             $this->guide = $lang->guide;
             $this->ourproposal = $lang->ourproposal;
 
-            $this->signin = $lang->signin;
-            $this->signup = $lang->signup;
-            $this->or = $lang->or;
-
             $this->creater = $lang->creater;
 
             $this->indexBody = $lang->indexBody;
 
+            $this->nickname = $lang->nickname;
+            $this->password = $lang->password;
+            $this->email = $lang->email;
+            $this->born = $lang->born;
+            $this->name = $lang->name;
+            $this->diploma = $lang->diploma;
         }
 
         public function selectLanguage($language){
