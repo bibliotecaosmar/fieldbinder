@@ -1,11 +1,6 @@
 <!--Content Itens Menu-->
-                        <li name="view" value="index"><?php echo $this->index ?></li>
-                        <li name="view" value="plant"><?php echo $this->plant ?></li>
-                        <li name="view" value="animal"><?php echo $this->animal ?></li>
-                        <li name="view" value="insect"><?php echo $this->insect ?></li>
-                        <li name="view" value="mushroom"><?php echo $this->mushroom ?></li>
-                        <li id="tabOn" name="view" value="manageUsers"><?php echo $this->manageUsers ?></li>
-                    </ul>
+                        <input id="ManageUsers" type="submit" hidden="value" name="view" value="manageUsers"/><label for="ManageUsers"><?php echo $this->manageUsers ?></label>
+                    </form><br>
                     <div>
                         <!--Sidebar Dropdown Menu-->
                         <h2></h2>

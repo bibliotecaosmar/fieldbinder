@@ -72,8 +72,12 @@
             require_once ROOT . VIEW . USER_WELCOME;
         }
         //interface that load view elements
-        public function loadView($view){
+        public function loadView($view, $acessLevel){
             //load view
+            if(!$acessLevel){
+                require_once ROOT . VIEW . NOT_AVOID;
+                return;
+            }
             $view = ROOT . VIEW . PAGE . $view . '.php';
             if(file_exists($view)){
                 require_once $view;

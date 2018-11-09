@@ -1,11 +1,6 @@
 <!--Content Itens Menu-->
-                        <li name="view" value="index"><?php echo $this->index ?></li>
-                        <li name="view" value="plant"><?php echo $this->plant ?></li>
-                        <li name="view" value="animal"><?php echo $this->animal ?></li>
-                        <li name="view" value="insect"><?php echo $this->insect ?></li>
-                        <li name="view" value="mushroom"><?php echo $this->mushroom ?></li>
-                        <li id="tabOn" name="view" value="signin"><?php echo $this->signin ?></li>
-                    </ul>
+                        <input id="Signin" type="submit" hidden="value" name="view" value="signin"/><label for="Signin"><?php echo $this->signin ?></label>
+                    </form><br>
                     <div>
                         <!--Sidebar Dropdown Menu-->
                         <h2>

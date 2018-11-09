@@ -1,5 +1,4 @@
-    <form method="post">
-        <input type="radio" name="setLanguage" value="en" method="post"><label for="english">English</label>
-        <input type="radio" name="setLanguage" value="pt-br" method="post"><label for="portuguese">Português</label>
-        <input type="submit" value="confirm">
-    </form>
+<form method="post">
+    <input id="English" type="submit" hidden="value" name="setLanguage" value="en"/><label for="English" >English</label>
+    <input id="Portugues" type="submit" hidden="value" name="setLanguage" value="pt-br"/><label for="Portugues" >Português</label>
+</form>

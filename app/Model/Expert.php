@@ -25,15 +25,18 @@
                     array_push($values, $spiece);
                 }
             }
-            $where = implode($where, ',');
-            $values = implode($values. ',');
+            $where = implode(',', $where);
+            $values = implode(',', $values);
             
             if(self::checkValues('spiecies', $spiece['name'], 'commonName')){
-                self::updateValues('spiecies', $values, $where);
-                return;
+                return self::updateValues('spiecies', $values, $where);
             }
-            self::insertValues('spiecies', $values, $where);
+            return self::insertValues('spiecies', $values, $where);
         }
 
-        public function reportPic(){}
+        public function reportPic(FileOperator $operator, $pic){
+            if($operator->countPicReport($pic)){
+                return $operator->deletePic($pic);
+            }
+        }
     }

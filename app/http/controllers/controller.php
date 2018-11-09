@@ -36,8 +36,8 @@
             }
 
             //Load page for user
-            $view->loadHead();
             $view->loadAccount($this->user);
+            $view->loadHead();
             $view->loadView($this->view, $request->checkAcessLevelView($this->user, $this->view));
             $view->loadModel($model->getModel($this->view, $auxModel));
             $view->loadAction($this->action);

@@ -57,6 +57,7 @@
     define('USER_WELCOME' , 'elementies/userWelcome.php');
     define('MODEL' , 'elementies/modelTags.php');
     define('ACTION' , 'elementies/actionTags.php');
+    define('NOT_AVOID' , 'elementies/notAvoid.php');
     //SYSTEM VARIABLE
     define('VIEW_LIST' , array('index' , 'guide' , 'signin' , 'signup' , 'plant' , 'animal' , 'insect' , 'mushroom' , 'ourproposal'));
 
