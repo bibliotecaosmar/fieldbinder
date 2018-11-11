@@ -16,8 +16,6 @@
             return self::selectValues('user', 'nickname', $user);
         }
         
-        public function submitData(){}
-        
         public function reportPicture(){}
     
     }

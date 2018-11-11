@@ -9,6 +9,7 @@
         public $signin = 'signin';
         public $signup = 'signup';
         public $or = 'or';
+        public $submit = 'submit';
         
         public $index = 'index';
         public $plant = 'plant';

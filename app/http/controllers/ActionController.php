@@ -6,7 +6,7 @@
 
     class ActionController
     {
-        public function handleAction($user, $action = NULL, $class){
+        public function handleAction($class, $action){
             switch($action){
                 case 'register':
                     if($class->registeAccount($_POST['newNickname'], 
@@ -29,7 +29,7 @@
                     //set view and others values
                     $_POST['view'] = 'index';                    
                 case 'updateProfile': 
-                    return $update->updateAccount($request->checkUser(), $_POST['password'], 
+                    return $class->updateAccount($request->checkUser(), $_POST['password'], 
                                                                          $_POST['newEmail'], 
                                                                          $_POST['newPassword'], 
                                                                          $_POST['newName'], 

@@ -11,8 +11,7 @@
         private $action;
         private $model;
         
-        public function __construct($auxAction,
-                                    $auxModel,
+        public function __construct($transporter,
                                     $view,
                                     $model,
                                     $request,
@@ -31,15 +30,15 @@
             $this->view = $_POST['view'] ?? 'index';
 
             //check level acess and execute action in first
-            if($request->checkAcessLevelAction($this->user, $auxAction->action)){
-                $this->action = $action->handleAction($this->user, $auxAction->class);
+            if($request->checkAcessLevelAction($this->user, $transporter->action)){
+                $this->action = $action->handleAction($transporte->classAction, $transporter->action);
             }
 
             //Load page for user
             $view->loadAccount($this->user);
             $view->loadHead();
             $view->loadView($this->view, $request->checkAcessLevelView($this->user, $this->view));
-            $view->loadModel($model->getModel($this->view, $auxModel));
+            $view->loadModel($model->getModel($this->view, $transporter->user));
             $view->loadAction($this->action);
             $view->loadFoot();
         }

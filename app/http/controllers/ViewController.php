@@ -6,6 +6,11 @@
 
     class ViewController implements LoadView
     {
+        private $signin;
+        private $signup;
+        private $or;
+        private $submit;
+
         private $index;
         private $plant;
         private $animal;
@@ -13,10 +18,6 @@
         private $mushroom;
         private $guide;
         private $ourproposal;
-
-        private $signin;
-        private $signup;
-        private $or;
 
         private $creater;
 
@@ -26,6 +27,7 @@
             $this->signin = $lang->signin;
             $this->signup = $lang->signup;
             $this->or = $lang->or;
+            $this->submit = $lang->submit;
 
             $this->index = $lang->index;
             $this->plant = $lang->plant;

@@ -8,11 +8,11 @@
     {
         public $messages;
 
-        private function jsonEncode(){
-
+        private function jsonEncode($datas){
+            //
         }
 
-        private function jsonDecode(){
+        private function jsonDecode($value){
 
         }
 

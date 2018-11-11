@@ -28,5 +28,17 @@
                 }   
             }
         }
-        public function manageSpiecies(){}
+        public function manageSpiecies($manage){
+            foreach($manage as $account){
+                switch($account['action']){
+                    case 'update':
+                        $values = $account['values'];
+                        $where = $account['where'];
+                        self::updateValues('spiece', $values, $where);
+                    case 'delete':
+                        $values = $account['spiece'];
+                        self::deleteValues('spiece', $values, 'email');
+                }   
+            }
+        }
     }

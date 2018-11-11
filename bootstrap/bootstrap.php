@@ -11,11 +11,9 @@
     $action = new App\Http\Controllers\ActionController();
     $request = new App\Http\Request\Request();
     $exception = new App\Exceptions\Exception();
-    $auxAction = new App\Model\AuxAction($_POST['action'] ?? NULL);
-    $auxModel = new App\Model\AuxModel();
+    $transporter = new App\Model\Transporter($_POST['action'] ?? NULL, $request->checkUser());
 
-    new App\Http\Controllers\Controller($auxAction, 
-                                        $auxModel->setModelUser($request->checkUser()), 
+    new App\Http\Controllers\Controller($transporter, 
                                         $view,
                                         $model, 
                                         $request, 

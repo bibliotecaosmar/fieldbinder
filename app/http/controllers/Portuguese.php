@@ -8,7 +8,8 @@
     {
         public $signin = 'entrar';
         public $signup = 'registra-se';
-        public $or = 'ou'; 
+        public $or = 'ou';
+        public $submit = 'enviar';
 
         public $index = 'catalogo';
         public $plant = 'planta';
