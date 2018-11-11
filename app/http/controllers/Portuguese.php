@@ -8,20 +8,23 @@
     {
         public $signin = 'entrar';
         public $signup = 'registra-se';
-        public $or = 'ou';
+        public $either = 'ou';
         public $submit = 'enviar';
 
-        public $index = 'catalogo';
+        public $home = 'início';
         public $plant = 'planta';
         public $animal = 'animal';
         public $insect = 'inseto';
         public $mushroom = 'congumelo';
         public $guide = 'guia';
         public $ourproposal = 'nossa proposta';
+        public $submitData = 'enviar dados';
 
-        public $creater = 'Criado por: ';
+        public $creater = 'criado por: ';
 
-        public $indexBody = 'Esse é um texto para teste da view de nosso produto etc etc etc....';
+        public $indexBody = 'esse é um texto para teste da view de nosso produto etc etc etc....';
+        public $guideBody = 'use com moderação.';
+        public $ourproposalBody = 'proposito nosso.';
 
         public $nickname = 'apelido';
         public $password = 'senha';

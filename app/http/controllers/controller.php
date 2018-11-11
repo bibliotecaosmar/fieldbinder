@@ -42,4 +42,8 @@
             $view->loadAction($this->action);
             $view->loadFoot();
         }
+
+        private function sendLanguage($view){
+            
+        }
     }

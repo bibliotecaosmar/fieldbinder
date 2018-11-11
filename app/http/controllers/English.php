@@ -8,16 +8,17 @@
     {
         public $signin = 'signin';
         public $signup = 'signup';
-        public $or = 'or';
+        public $either = 'or';
         public $submit = 'submit';
         
-        public $index = 'index';
+        public $home = 'home';
         public $plant = 'plant';
         public $animal = 'animal';
         public $insect = 'insect';
         public $mushroom = 'mushroom';
         public $guide = 'guide';
         public $ourproposal = 'ourproposal';
+        public $submitData = 'submit data';
         
         public $creater = 'Created by: ';
 

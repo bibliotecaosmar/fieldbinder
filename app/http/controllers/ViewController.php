@@ -6,62 +6,19 @@
 
     class ViewController implements LoadView
     {
-        private $signin;
-        private $signup;
-        private $or;
-        private $submit;
+        private $language;
 
-        private $index;
-        private $plant;
-        private $animal;
-        private $insect;
-        private $mushroom;
-        private $guide;
-        private $ourproposal;
-
-        private $creater;
-
-        private $indexBody;
-
-        private function setLanguage($lang){
-            $this->signin = $lang->signin;
-            $this->signup = $lang->signup;
-            $this->or = $lang->or;
-            $this->submit = $lang->submit;
-
-            $this->index = $lang->index;
-            $this->plant = $lang->plant;
-            $this->animal = $lang->animal;
-            $this->insect = $lang->insect;
-            $this->mushroom = $lang->mushroom;
-            $this->guide = $lang->guide;
-            $this->ourproposal = $lang->ourproposal;
-
-            $this->creater = $lang->creater;
-
-            $this->indexBody = $lang->indexBody;
-
-            $this->nickname = $lang->nickname;
-            $this->password = $lang->password;
-            $this->email = $lang->email;
-            $this->born = $lang->born;
-            $this->name = $lang->name;
-            $this->diploma = $lang->diploma;
-        }
-
+        //interface
         public function selectLanguage($language){
             switch($language){
                 case 'pt-br':
-                    $lang = new Portuguese;
-                    $this->setLanguage($lang);
+                    $this->language = new Portuguese();
                     break;
                 case 'en':
-                    $lang = new English;
-                    $this->setLanguage($lang);
+                    $this->language = new English();
                     break;
                 default:
-                    $lang = new Portuguese;
-                    $this->setLanguage($lang);
+                    $this->language = new Portuguese();
                     break;
             }
         }
