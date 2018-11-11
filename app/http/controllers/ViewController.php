@@ -75,9 +75,11 @@
         public function loadAccount($user){
             if($user = 'undefined'){
                 require_once ROOT . VIEW . SIGN_BUTTON;
+                require_once ROOT . VIEW . MENU;
                 return;
             }
             require_once ROOT . VIEW . USER_WELCOME;
+            require_once ROOT . VIEW . MENU;
         }
         //interface that load view elements
         public function loadView($view, $acessLevel){

@@ -1,5 +1,5 @@
-<form method="post" action="index.php">
-    <button name="view" value="signin"><?php echo $this->signin ?></button>
-    <h4><?php echo $this->or ?></h4>
-    <button name="view" value="signup"><?php echo $this->signup ?></button>
-</form>
+            <form method="post">
+                <input id="Signin" type="submit" hidden="value" name="view" value="signin"><label for="Signin"><?php echo $this->signin ?></label>
+                <p> <?php echo $this->or ?> </p>
+                <input id="Signup" type="submit" hidden="value" name="view" value="signup"><label for="Signup"><?php echo $this->signup ?></label>
+            </form>

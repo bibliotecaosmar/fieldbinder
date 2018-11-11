@@ -53,6 +53,7 @@
     //ESSENTIAL ELEMENTS
     define('HEAD' , 'essential/head.php');
     define('FOOT' , 'essential/foot.php');
+    define('MENU' , 'essential/menu.php');
     define('SIGN_BUTTON' , 'elementies/signButton.php');
     define('USER_WELCOME' , 'elementies/userWelcome.php');
     define('MODEL' , 'elementies/modelTags.php');
