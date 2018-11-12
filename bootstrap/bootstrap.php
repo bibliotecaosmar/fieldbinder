@@ -16,6 +16,6 @@
     new App\Http\Controllers\Controller($transporter, 
                                         $view,
                                         $model, 
-                                        $request, 
                                         $action, 
+                                        $request, 
                                         $exception);

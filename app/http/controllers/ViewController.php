@@ -39,13 +39,8 @@
             require_once ROOT . VIEW . MENU;
         }
         //interface that load view elements
-        public function loadView($view, $acessLevel){
-            //load view
-            if(!$acessLevel){
-                require_once ROOT . VIEW . NOT_AVOID;
-                return;
-            }
-            $view = ROOT . VIEW . PAGE . $view . '.php';
+        public function loadView($view){
+             $view = ROOT . VIEW . PAGE . $view . '.php';
             if(file_exists($view)){
                 require_once $view;
             }

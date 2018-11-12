@@ -20,21 +20,16 @@
                 case 'manageUsers':
                     $user = $this->checkUser();
                     if($user = 'adm'){
-                        return TRUE;
+                        return $view;
                     }
-                    return FALSE;
-                case 'profile':
+                    return 'notAvoid';
+                case 'profile'||'submitData':
                     if($user != 'undefinided'){
-                        return TRUE;
+                        return $view;
                     }
-                    return FALSE;
-                case 'submitData':
-                    if($user != 'undefinided'){
-                        return TRUE;
-                    }
-                    return FALSE;
+                    return 'notAvoid';
                 default:
-                    return TRUE;
+                    return $view;
             }
         }
         //check acess level of action

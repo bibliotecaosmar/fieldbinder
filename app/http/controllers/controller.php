@@ -14,8 +14,8 @@
         public function __construct($transporter,
                                     $view,
                                     $model,
-                                    $request,
                                     $action,
+                                    $request,
                                     $exception){
             
             if(!isset($_COOKIE['language'])){
@@ -37,7 +37,7 @@
             //Load page for user
             $view->loadHead();
             $view->loadAccount($this->user);
-            $view->loadView($this->view, $request->checkAcessLevelView($this->user, $this->view));
+            $view->loadView($request->checkAcessLevelView($this->user, $this->view));
             $view->loadModel($model->getModel($this->view, $transporter->user));
             $view->loadAction($this->action);
             $view->loadFoot();

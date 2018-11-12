@@ -6,19 +6,14 @@
 
     class ModelController implements GetModel
     {
-        private $view;
-        private $votation;
-        private $infoSpiece;
-        private $infoProfile;
-
         public function getModel($view, $model){
             switch($view){
                 case 'manageUsers':
-                    return $model->manageAccounts($user, $password);
+                    return $model->manageAccounts($_POST['user'], $_POST['password']);
                 case 'profile':
-                    return $model->showProfile($user);
+                    return $model->showProfile($_POST['user']);
                 case 'spiece':
-                    return $model->getSpiece($spiece);
+                    return $model->showSpiece($_POST['spiece']);
                 case 'catalog':
                     return $model->showCatalog($view);
                 default:
