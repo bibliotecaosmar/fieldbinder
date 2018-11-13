@@ -1,3 +1,1 @@
-<h3 id="not avoid">
-    not avoid
-</h3>
+<h3 id="not avoid"><?php echo $this->language->notAvoid ?></h3>

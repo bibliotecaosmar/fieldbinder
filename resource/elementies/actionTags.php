@@ -1,1 +1,1 @@
-<h5 id=<?php $actions[id] ?>><?php $actions[label] ?></h5>
+<h5 id=<?php $actions['id'] ?>><?php $actions['label'] ?></h5>

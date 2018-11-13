@@ -50,14 +50,16 @@
     define('VIEW' , 'resource/');
     define('PAGE' , 'views/');
     define('LANG', 'lang/');
-    //ESSENTIAL ELEMENTS
+    //ESSENTIAL ELEMENTIES
     define('HEAD' , 'essential/head.php');
     define('FOOT' , 'essential/foot.php');
     define('MENU' , 'essential/menu.php');
     define('SIGN_BUTTON' , 'elementies/signButton.php');
     define('USER_WELCOME' , 'elementies/userWelcome.php');
+    //MOVEL ELEMENTIES
     define('MODEL' , 'elementies/modelTags.php');
     define('ACTION' , 'elementies/actionTags.php');
+    define('EXCEPTION' , 'elementies/exceptionTag.php');
     define('NOT_AVOID' , 'elementies/notAvoid.php');
     //SYSTEM VARIABLE
     define('VIEW_LIST' , array('index' , 'guide' , 'signin' , 'signup' , 'plant' , 'animal' , 'insect' , 'mushroom' , 'ourproposal'));

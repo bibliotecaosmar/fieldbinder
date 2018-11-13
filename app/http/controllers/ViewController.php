@@ -47,18 +47,23 @@
         }
         //interface that load model elements
         public function loadModel($model){
-            if(isset($model['id'], $model['label'])){
+            if(is_array($model)){
                 foreach($model as $models){
                     require ROOT . VIEW . MODEL;
                 }
+                return;
             }
+            require_once ROOT . VIEW . EXCEPTION;
         }
         //interface that load action elements
         public function loadAction($action){
-            //code
-            if(isset($action['id'], $model['label'])){
-                require_once ROOT . VIEW . ACTION;
+            if(is_array($action)){
+                foreach($action as $actions){
+                    require ROOT . VIEW . MODEL;
+                }
+                return;
             }
+            require_once ROOT . VIEW . EXCEPTION;
         }
         //interface that load head element
         public function loadHead(){
