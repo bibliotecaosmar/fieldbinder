@@ -6,18 +6,35 @@
 
     class JsonServer implements FileOperator
     {
-        public $messages;
+        private $content;
+        private $json;
 
-        private function jsonEncode($datas){
-            //
+        public function __construct(){
+            $this->contents = file_get_contents('../storage/spieciesDB.json');
+            $this->json = json_decode($contents, true);
         }
 
-        private function jsonDecode($value){
+        private function jsonSearch(){
 
         }
 
-        public function jsonSelect($database, $values, $where){}
-        public function jsonInsert($database, $values, $where){}
-        public function jsonUpdate($database, $values, $where){}
-        public function jsonDelete($database, $values, $where){}
+        private function jsonSendData(){
+
+        }
+
+        private function jsonDelete(){
+
+        }
+
+        public function jsonLastObjLimit($data){
+            
+        }
+
+        public function jsonPicDeletion($pic){
+            
+        }
+        
+        public function jsonEnvyVotation($data){
+
+        }
     }

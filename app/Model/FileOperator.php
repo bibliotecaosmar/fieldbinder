@@ -6,8 +6,7 @@
 
     interface FileOperator
     {
-        public function jsonSearch($values);
-        public function jsonEncode($database, $values, $where);
-        public function jsonDecode($database, $values, $where);
-        public function countPicReports($pic);
+        public function jsonLastObjLimit($data);
+        public function jsonPicDeletion($pic);
+        public function jsonEnvyVotation($data);
     }
